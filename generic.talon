@@ -23,6 +23,7 @@ term copy: insert("cp ")
 term cat: insert("cat ")
 term list: insert("ls ")
 term move: insert("mv ")
+term remove: insert("rm ")
 term code: insert("code .")
 term code here:
     insert("code .")
@@ -30,7 +31,7 @@ term code here:
 snap dome: insert("snabbdom")
 
 # switch to last application
-go app last:
+go switch:
     key(cmd-tab)
 
 disk: key(cmd-s)
@@ -58,3 +59,9 @@ node pack install save dev: insert("npm install --save-dev ")
 node pack start: insert("npm start ")
 node pack run: insert("npm run ")
 node pack help: insert("npm help ")
+
+yarn: insert("yarn")
+yarn add: insert("yarn add ")
+yarn add dev: insert("yarn add --dev ")
+yarn dev: insert("yarn dev")
+yarn dev watch: insert("yarn dev -w")

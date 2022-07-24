@@ -7,9 +7,6 @@ scroll down:
 scroll up:
     key(ctrl-u)
 
-yarn dev: insert("yarn dev")
-yarn dev watch: insert("yarn dev -w")
-
 search: key(cmd-shift-f)
 result last: key(shift-f4)
 result next: key(f4)
@@ -22,3 +19,9 @@ tab move left: user.vscode("workbench.action.moveEditorLeftInGroup")
 tab move right: user.vscode("workbench.action.moveEditorRightInGroup")
 tab move left group: user.vscode("workbench.action.moveEditorToLeftGroup")
 tab move right group: user.vscode("workbench.action.moveEditorToRightGroup")
+
+panel max: key("cmd-shift-k")
+
+# for selecting a quick pick item
+pick <number_small>: key("down:{number_small-1} enter")
+pick up <number_small>: key("up:{number_small} enter")
