@@ -30,6 +30,12 @@ term code here:
     key(enter)
 snap dome: insert("snabbdom")
 
+# activate shortcat
+short links: key(cmd-shift-space)
+
+# activate vimac
+vintage links: key(ctrl-f)
+
 # switch to last application
 go switch:
     key(cmd-tab)
