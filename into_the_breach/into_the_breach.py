@@ -9,7 +9,7 @@ files = ["a", "b", "c", "d", "e", "f", "g", "h"]
 ranks = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 BOX_WIDTH = 220
-BOX_HEIGHT = 160
+BOX_HEIGHT = 8 / 11 * BOX_WIDTH
 
 def coordinate_to_position(coordinate: typing.List[str]):
     screen = ui.screens()[0]
