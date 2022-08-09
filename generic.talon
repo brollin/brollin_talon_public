@@ -24,10 +24,9 @@ term cat: insert("cat ")
 term list: insert("ls ")
 term move: insert("mv ")
 term remove: insert("rm ")
-term code: insert("code .")
-term code here:
-    insert("code .")
-    key(enter)
+term code: insert("code ")
+term code here: insert("code .\n")
+term reverse: key(ctrl-r)
 snap dome: insert("snabbdom")
 
 # activate shortcat
@@ -71,3 +70,7 @@ yarn add: insert("yarn add ")
 yarn add dev: insert("yarn add --dev ")
 yarn dev: insert("yarn dev")
 yarn dev watch: insert("yarn dev -w")
+
+pip install: insert("pip install ")
+
+brew install: insert("brew install ")
