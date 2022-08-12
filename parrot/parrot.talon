@@ -1,10 +1,10 @@
 not mode: sleep
 -
-# TODO: version control the ~/.talon/parrot stuff somehow
-parrot(tongue_click):
-	print("tongue_click")
-	# mouse_click(1)
+parrot(tongue_click): user.do_mapped_parrot_action("tongue_click")
+parrot(caveman): user.do_mapped_parrot_action("caveman")
 
-parrot(caveman):
-	print("caveman")
-	# mouse_click(1)
+^assign {user.parrot_sound} <user.alphanumeric_or_action>$:
+	user.assign_parrot_action(parrot_sound, alphanumeric_or_action)
+
+^unassign {user.parrot_sound}$:
+	user.unassign_parrot_action(parrot_sound)

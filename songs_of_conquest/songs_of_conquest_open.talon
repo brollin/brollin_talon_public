@@ -26,9 +26,3 @@ also <number> {user.conquest_cardinal} <number> {user.conquest_cardinal}:
 also {user.conquest_cardinal} <number> {user.conquest_cardinal} <number>:
     user.conquest_cardinal_move_2d(conquest_cardinal_1, number_1, conquest_cardinal_2, number_2, "relative")
 
-# parrot(tongue_click):
-# 	# mouse_click(0)
-
-parrot(caveman):
-	mouse_click(1)
-

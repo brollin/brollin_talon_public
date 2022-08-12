@@ -32,3 +32,10 @@ copy command <number_small>:
     key("down:{number_small-1}")
     sleep(350ms)
     user.copy_command_id()
+
+to do open:
+    key(cmd-p)
+    sleep(200ms)
+    insert("/Users/ben.rollin/todo.md")
+    sleep(200ms)
+    key(enter)

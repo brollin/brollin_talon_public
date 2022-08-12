@@ -8,9 +8,7 @@ and not mode: sleep
 ^click <user.any_alphanumeric_key>+$:
     user.breach_go_to_tile(any_alphanumeric_key_list, "click")
 
-# parrot(tongue_click):
-# 	# mouse_click(0)
-
-parrot(caveman):
-	mouse_click(0)
+take one: "a"
+take to: "s"
+take three: "d"
 
