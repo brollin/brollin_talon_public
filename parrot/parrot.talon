@@ -8,3 +8,6 @@ parrot(caveman): user.do_mapped_parrot_action("caveman")
 
 ^unassign {user.parrot_sound}$:
 	user.unassign_parrot_action(parrot_sound)
+
+^unassign all$:
+	user.unassign_parrot_action("all")

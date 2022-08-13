@@ -1,6 +1,8 @@
 from talon import Module, Context, ui, ctrl, canvas, screen, actions
 import time
 
+from ..brollin_talon import brollin_overlay
+
 mod = Module()
 mod.list("parrot_sound", desc="List of all parrot sounds")
 
@@ -40,13 +42,18 @@ class ParrotActions:
 
     def assign_parrot_action(sound: str, action: str):
         """Assign a parrot action"""
-        if "nothing" in action and sound in sound_to_action:
+        global sound_to_action
+        if "nothing" in action and sound == "all":
+            sound_to_action = {}
+            action = "<unassigned>"
+        elif "nothing" in action and sound in sound_to_action:
             del sound_to_action[sound]
             action = "<unassigned>"
         else:
             sound_to_action[sound] = action
 
         print(f"ASSIGNED parrot({sound}): {action}")
+        brollin_overlay.set_sound_to_action(sound_to_action)
 
     def unassign_parrot_action(sound: str):
         """Unassign a parrot action"""
