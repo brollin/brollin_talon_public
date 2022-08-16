@@ -11,3 +11,7 @@ parrot(caveman): user.do_mapped_parrot_action("caveman")
 
 ^unassign all$:
 	user.unassign_parrot_action("all")
+
+profile <user.text>: user.set_parrot_profile(text)
+profile none: user.unassign_parrot_action("all")
+zoomer: user.set_parrot_profile("second")

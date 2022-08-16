@@ -20,6 +20,8 @@ ctx.lists["user.parrot_sound"] = {"tongue": "tongue_click", "caveman": "caveman"
 
 sound_to_action = {}
 
+profiles = {"second": {"tongue_click": "second"}}
+
 
 @mod.action_class
 class ParrotActions:
@@ -58,3 +60,13 @@ class ParrotActions:
     def unassign_parrot_action(sound: str):
         """Unassign a parrot action"""
         actions.user.assign_parrot_action(sound, "nothing")
+
+    def set_parrot_profile(profile: str):
+        """Set a parrot profile"""
+        if profile not in profiles:
+            print("profile not found")
+            return
+
+        global sound_to_action
+        sound_to_action = profiles[profile]
+        brollin_overlay.set_sound_to_action(sound_to_action)
