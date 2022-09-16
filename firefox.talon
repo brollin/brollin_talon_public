@@ -9,6 +9,11 @@ re folk:
 
 links: key(ctrl-f12)
 
+relinks:
+    key(cmd-l)
+    key(f6)
+    key(ctrl-f12)
+
 links new: key(alt-f12)
 
 tab new personal:
@@ -25,3 +30,5 @@ scroll up:
 
 downloads show:
     key(cmd-j)
+
+slack react: key(cmd-shift-\)

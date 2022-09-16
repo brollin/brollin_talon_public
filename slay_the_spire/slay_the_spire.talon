@@ -1,7 +1,8 @@
 os: mac
-# and app.bundle: net.java.openjdk.cmd
+and app.bundle: net.java.openjdk.cmd
 -
 item <number_small>: user.spire_item(number_small)
+item use: user.spire_use_item()
 relic <number_small>: user.spire_relic(number_small)
 enemy <number_small>: user.spire_enemy(number_small)
 ^enemy$: user.spire_enemy(1)

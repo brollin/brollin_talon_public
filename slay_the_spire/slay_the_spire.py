@@ -39,7 +39,6 @@ class SpireController:
             "b",
             "c",
             "d",
-            "e",
             "g",
             "h",
             "i",
@@ -156,11 +155,11 @@ spire_controller = SpireController()
 class SpireActions:
     def spire_item(number: str):
         """Mouseover an item/potion"""
-        ctrl.mouse_move(735 - 65 + 78 * int(number), 50)
+        ctrl.mouse_move(775 + 78 * int(number), 50)
 
     def spire_relic(number: str):
         """Mouseover a relic"""
-        ctrl.mouse_move(30 + 96 * int(number), 140)
+        ctrl.mouse_move(-20 + 96 * int(number), 140)
 
     def spire_enemy(number: int, click: int = -1):
         """Mouseover an enemy"""
@@ -223,3 +222,12 @@ class SpireActions:
             ctrl.mouse_move(1760.0 + 250 * (number - 1), 908.0)
         else:
             ctrl.mouse_move(1760.0 + 250 * (number - 4), 908.0 + 300)
+
+    def spire_use_item():
+        """Use the shop item"""
+        x, y = ctrl.mouse_pos()
+        ctrl.mouse_click(button=0)
+        time.sleep(0.1)
+        ctrl.mouse_move(x, y + 200)
+        time.sleep(0.1)
+        ctrl.mouse_click(button=0)

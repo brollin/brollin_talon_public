@@ -10,7 +10,8 @@ settings():
 
 # terminal helpers
 change dir: insert("cd ")
-change dir back:
+term change: insert("cd ")
+(change dir back) | (term change back):
     insert("cd ..")
     key(enter)
 make dir: insert("mkdir ")
@@ -27,10 +28,12 @@ term remove: insert("rm ")
 term code: insert("code ")
 term code here: insert("code .\n")
 term reverse: key(ctrl-r)
+term talon log: insert("tail -f ~/.talon/talon.log\n")
+term projects: insert("cd ~/projects && c\n")
 snap dome: insert("snabbdom")
 
 # activate shortcat
-short links: key(cmd-shift-space)
+(short links | slinks): key(cmd-shift-space)
 
 # activate vimac
 vintage links: key(ctrl-f)
@@ -71,6 +74,6 @@ yarn add dev: insert("yarn add --dev ")
 yarn dev: insert("yarn dev")
 yarn dev watch: insert("yarn dev -w")
 
-pip install: insert("pip install ")
+pip install: insert("pip3 install ")
 
 brew install: insert("brew install ")

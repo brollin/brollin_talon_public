@@ -8,7 +8,7 @@ mod.list("parrot_sound", desc="List of all parrot sounds")
 
 
 @mod.capture(
-    rule="( <self.any_alphanumeric_key> | click | right click | nothing | second )"
+    rule="( <self.any_alphanumeric_key> | click | right click | nothing | second | enter )"
 )
 def alphanumeric_or_action(m) -> str:
     "any alphanumeric key"
@@ -21,6 +21,8 @@ ctx.lists["user.parrot_sound"] = {"tongue": "tongue_click", "caveman": "caveman"
 sound_to_action = {}
 
 profiles = {"second": {"tongue_click": "second"}}
+
+DEBUG = False
 
 
 @mod.action_class
@@ -39,8 +41,11 @@ class ParrotActions:
                 ctrl.mouse_click(button=button, up=True)
             elif "second" in action:
                 actions.core.repeat_phrase(1)
+            else:
+                actions.key(action)
 
-        print(f"DOING    parrot({sound}): {action}")
+        if DEBUG == True:
+            print(f"DOING    parrot({sound}): {action}")
 
     def assign_parrot_action(sound: str, action: str):
         """Assign a parrot action"""

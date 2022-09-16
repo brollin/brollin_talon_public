@@ -1,10 +1,22 @@
 from typing import Dict
-from talon import Module, Context, ui, ctrl, canvas, screen, actions, clip
+from talon import Module, Context, ui, ctrl, canvas, screen, actions, clip, noise
 from talon.skia import Paint, Image
 import json
 
 mod = Module()
 ctx = Context()
+
+
+def testing_pop(active):
+    print("Heard pop")
+
+
+def testing_hiss(active):
+    print("Heard hiss")
+
+
+# noise.register("pop", testing_pop)
+# noise.register("hiss", testing_hiss)
 
 
 class BrollinOverlay:
@@ -82,3 +94,20 @@ class BrollinActions:
     def show_talon_overlay(toggle: int):
         """Show an overlay indicating whether talon is awake"""
         brollin_overlay.set_awake(True if toggle == 1 else False)
+
+    def toggle_talon():
+        """Toggle talon on or off"""
+        if not actions.speech.enabled():
+            actions.user.wake_talon()
+        else:
+            actions.user.sleep_talon()
+
+    def sleep_talon():
+        """Turn talon off"""
+        actions.speech.disable()
+        actions.user.show_talon_overlay(0)
+
+    def wake_talon():
+        """Turn talon on"""
+        actions.speech.enable()
+        actions.user.show_talon_overlay(1)

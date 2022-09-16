@@ -1,4 +1,3 @@
-os: mac
-and app.bundle: com.googlecode.iterm2
+app: iterm2
 -
 scratcher: key(alt-backspace)
