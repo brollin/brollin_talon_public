@@ -1,5 +1,5 @@
 os: mac
-and app.bundle: net.java.openjdk.cmd
+# and app.bundle: net.java.openjdk.cmd
 -
 item <number_small>: user.spire_item(number_small)
 item use: user.spire_use_item()
@@ -12,9 +12,9 @@ click enemy <number_small>: user.spire_enemy(number_small, 0)
 ^unmap [enemies]$: user.spire_clear_enemies()
 ^remap [enemies]$: user.spire_remap_enemies()
 spire grid: user.spire_activate_grid()
-done:
-    user.spire_close_grid()
-    user.spire_enemy(1)
+#done:
+#    user.spire_close_grid()
+#    user.spire_enemy(1)
 bug: user.spire_handle_bug()
 booty: user.spire_go_to_booty()
 confirm:

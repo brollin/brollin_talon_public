@@ -1,3 +1,4 @@
+from msvcrt import kbhit
 from talon import Module, Context, ui, ctrl, canvas, screen, actions
 import time
 
@@ -40,7 +41,7 @@ class ParrotActions:
                 time.sleep(0.1)
                 ctrl.mouse_click(button=button, up=True)
             elif "second" in action:
-                actions.core.repeat_phrase(1)
+                actions.core.repeat_command()
             else:
                 actions.key(action)
 

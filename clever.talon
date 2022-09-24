@@ -15,3 +15,6 @@ ee prod: " -e production "
 ee dev: " -e clever-dev "
 
 pick a bot sharpies: "@pickabot assign sharing-apis "
+
+clever go: "http://go/"
+brollin demo district: insert("58d06ce8a4933e00018e4fb4")

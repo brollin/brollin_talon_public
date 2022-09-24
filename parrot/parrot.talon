@@ -13,5 +13,5 @@ parrot(caveman): user.do_mapped_parrot_action("caveman")
 	user.unassign_parrot_action("all")
 
 pro <user.text>: user.set_parrot_profile(text)
-pro none: user.unassign_parrot_action("all")
+done: user.unassign_parrot_action("all")
 zoomer: user.set_parrot_profile("second")

@@ -9,7 +9,6 @@ settings():
 (pad | padding): insert(" ")
 
 # terminal helpers
-change dir: insert("cd ")
 term change: insert("cd ")
 (change dir back) | (term change back):
     insert("cd ..")
@@ -28,12 +27,18 @@ term remove: insert("rm ")
 term code: insert("code ")
 term code here: insert("code .\n")
 term reverse: key(ctrl-r)
-term talon log: insert("tail -f ~/.talon/talon.log\n")
+term talon: insert("cd ~/.talon/user/talon_umbrella\n")
+term talon log: insert("grc tail -f ~/.talon/talon.log\n")
 term projects: insert("cd ~/projects && c\n")
+term clever: insert("cd $CODE_HOME\n")
 snap dome: insert("snabbdom")
 
 # activate shortcat
-(short links | slinks): key(cmd-shift-space)
+slinks: key(cmd-shift-space)
+slinks <user.text>:
+    key(cmd-shift-space)
+    sleep(10ms)
+    insert(text)
 
 # activate vimac
 vintage links: key(ctrl-f)
@@ -43,6 +48,7 @@ go switch:
     key(cmd-tab)
 
 disk: key(cmd-s)
+do again: core.repeat_phrase()
 
 # windowing commands from rectangle
 maximise:
@@ -77,3 +83,5 @@ yarn dev watch: insert("yarn dev -w")
 pip install: insert("pip3 install ")
 
 brew install: insert("brew install ")
+
+node version use: insert("nvm use ")

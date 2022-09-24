@@ -159,7 +159,9 @@ class SpireActions:
 
     def spire_relic(number: str):
         """Mouseover a relic"""
-        ctrl.mouse_move(-20 + 96 * int(number), 140)
+        # (1245.0, 265.0)
+        ctrl.mouse_move(1245 + 35 * int(number) - 35, 265.0)
+        # ctrl.mouse_move(-20 + 96 * int(number), 140)
 
     def spire_enemy(number: int, click: int = -1):
         """Mouseover an enemy"""
