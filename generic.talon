@@ -10,9 +10,8 @@ settings():
 
 # terminal helpers
 term change: insert("cd ")
-(change dir back) | (term change back):
-    insert("cd ..")
-    key(enter)
+term change back: insert("cd ..\n")
+term change last: insert("cd -\n")
 make dir: insert("mkdir ")
 vintage: insert("vim ")
 vintage disk:
@@ -24,6 +23,8 @@ term cat: insert("cat ")
 term list: insert("ls ")
 term move: insert("mv ")
 term remove: insert("rm ")
+term open: insert("open ")
+term open here: insert("open .\n")
 term code: insert("code ")
 term code here: insert("code .\n")
 term reverse: key(ctrl-r)
