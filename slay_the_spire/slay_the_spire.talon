@@ -1,5 +1,5 @@
 os: mac
-# and app.bundle: net.java.openjdk.cmd
+and app.bundle: net.java.openjdk.cmd
 -
 item <number_small>: user.spire_item(number_small)
 item use: user.spire_use_item()

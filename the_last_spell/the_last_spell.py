@@ -2,6 +2,7 @@ from talon import Module, Context, ui, ctrl, canvas, screen, actions
 from dataclasses import dataclass
 from talon.skia import Paint, Image
 from talon.types import point
+import time
 
 mod = Module()
 mod.list("spell_cardinal", desc="cardinal directions for songs of spell movement")
@@ -20,6 +21,7 @@ grid_letters = [
     "c",
     "d",
     "e",
+    "f",
     "g",
     "h",
     "k",
@@ -34,12 +36,13 @@ grid_letters = [
     "u",
     "w",
     "y",
+    "z",
 ]
 
 GRID_WIDTH = 110
 GRID_HEIGHT = 85
 # number of rose and columns. cannot be more than the length of the grid_letters array
-GRID_SIZE = 9
+GRID_SIZE = 10
 
 
 @dataclass
@@ -102,10 +105,10 @@ class SpellController:
         if self.mcanvas is None:
             self.mcanvas = canvas.Canvas.from_screen(self.screen)
         else:
-            self.mcanvas.unregister("draw", self.draw_world_grid)
+            self.mcanvas.unregister("draw", self.draw_isometric_grid)
 
         if visible:
-            self.mcanvas.register("draw", self.draw_world_grid)
+            self.mcanvas.register("draw", self.draw_isometric_grid)
             self.mcanvas.freeze()
             self.visible = True
         self.active = True
@@ -113,26 +116,26 @@ class SpellController:
     def show(self):
         if self.visible:
             return
-        self.mcanvas.register("draw", self.draw_world_grid)
+        self.mcanvas.register("draw", self.draw_isometric_grid)
         self.mcanvas.freeze()
         self.visible = True
 
     def hide(self):
         if not self.visible:
             return
-        self.mcanvas.unregister("draw", self.draw_world_grid)
+        self.mcanvas.unregister("draw", self.draw_isometric_grid)
         self.visible = False
 
     def close(self):
         if not self.active:
             return
-        self.mcanvas.unregister("draw", self.draw_world_grid)
+        self.mcanvas.unregister("draw", self.draw_isometric_grid)
         self.mcanvas.close()
         self.mcanvas = None
         self.visible = False
         self.active = False
 
-    def draw_world_grid(self, canvas):
+    def draw_isometric_grid(self, canvas):
         paint = canvas.paint
 
         def draw_grid():
@@ -150,7 +153,9 @@ class SpellController:
 
                     background_rect = text_rect.copy()
                     background_rect.center = point.Point2d(position.x, position.y)
-                    background_rect = background_rect.inset(1)
+                    background_rect.width -= 2
+                    background_rect.height -= 1
+                    background_rect.x += 1
 
                     paint.color = "000000ff"
                     paint.style = Paint.Style.FILL
@@ -167,7 +172,7 @@ class SpellController:
         paint.color = "ff0000ff"
         draw_grid()
 
-        paint.textsize = 15
+        paint.textsize = 13
         if self.show_text:
             draw_text()
 
@@ -224,6 +229,16 @@ class SpellActions:
     def spell_id_move(letter1: str, letter2: str):
         """Move to a square by id"""
         spell_controller.go_to_id(letter1 + letter2)
+
+    def spell_double_click():
+        """Perform a double click"""
+        ctrl.mouse_click(button=0, down=True)
+        time.sleep(0.05)
+        ctrl.mouse_click(button=0, up=True)
+        time.sleep(0.05)
+        ctrl.mouse_click(button=0, down=True)
+        time.sleep(0.05)
+        ctrl.mouse_click(button=0, up=True)
 
     # unused commands below
 

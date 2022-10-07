@@ -1,15 +1,15 @@
 os: mac
 and app.bundle: com.microsoft.VSCode
 -
-scroll down:
-    key(ctrl-d)
-
-scroll up:
-    key(ctrl-u)
+scroll down: key(ctrl-d)
+scroll up: key(ctrl-u)
 
 search: key(cmd-shift-f)
-result last: key(shift-f4)
-result next: key(f4)
+result last: user.vscode("search.action.focusPreviousSearchResult")
+result next: user.vscode("search.action.focusNextSearchResult")
+
+ref last: user.vscode("references-view.prev")
+ref next: user.vscode("references-view.next")
 
 # TODO make these language specific
 to do comment: insert("// TODO ")

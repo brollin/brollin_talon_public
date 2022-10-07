@@ -85,3 +85,4 @@ pip install: insert("pip3 install ")
 brew install: insert("brew install ")
 
 node version use: insert("nvm use ")
+node version install: insert("nvm install ")
