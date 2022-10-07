@@ -51,14 +51,10 @@ disk: key(cmd-s)
 do again: core.repeat_phrase()
 
 # windowing commands from rectangle
-maximise:
-    key(cmd-shift-m)
-snap middle:
-    key(ctrl-alt-shift-`)
-make smaller:
-    key(ctrl-alt--)
-make larger:
-    key(ctrl-alt-=)
+maximise: key(cmd-shift-m)
+snap middle: key(ctrl-alt-shift-`)
+make smaller: key(ctrl-alt--)
+make bigger: key(ctrl-alt-=)
 
 # javascript
 consol log:
