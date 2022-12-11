@@ -7,12 +7,12 @@ re folk:
     key(cmd-l)
     key(f6)
 
-links: key(ctrl-shift-space)
-
+hints: key(ctrl-shift-space)
+links: key(ctrl-f12)
 relinks:
     key(cmd-l)
     key(f6)
-    key(ctrl-shift-space)
+    key(ctrl-f12)
 
 tab new personal: key(cmd-shift-1)
 

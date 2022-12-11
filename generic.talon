@@ -8,8 +8,15 @@ settings():
 
 (pad | padding): insert(" ")
 
+clippy: edit.paste()
+clipsy: edit.copy()
+
 # terminal helpers
 term change: insert("cd ")
+term change <user.text>:
+    insert("cd ")
+    insert(text)
+    key(tab)
 term change back: insert("cd ..\n")
 term change last: insert("cd -\n")
 make dir: insert("mkdir ")
@@ -54,8 +61,8 @@ do again: core.repeat_phrase()
 # windowing commands from rectangle
 maximise: key(cmd-shift-m)
 snap middle: key(ctrl-alt-shift-`)
-make smaller: key(ctrl-alt--)
-make bigger: key(ctrl-alt-=)
+win smaller: key(ctrl-alt--)
+win bigger: key(ctrl-alt-=)
 
 # javascript
 consol log:

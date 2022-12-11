@@ -1,5 +1,4 @@
-from msvcrt import kbhit
-from talon import Module, Context, ui, ctrl, canvas, screen, actions
+from talon import Module, Context, ctrl, actions
 import time
 
 from ..brollin_talon import brollin_overlay

@@ -12,7 +12,7 @@ ref last: user.vscode("references-view.prev")
 ref next: user.vscode("references-view.next")
 
 # TODO make these language specific
-to do comment: insert("// TODO ")
+to do comment: insert("// TODO: ")
 op empty lambda: insert("() => ")
 
 tab move left: user.vscode("workbench.action.moveEditorLeftInGroup")
@@ -22,6 +22,7 @@ tab move right group: user.vscode("workbench.action.moveEditorToRightGroup")
 tab closer: user.vscode("workbench.action.closeEditorsToTheRight")
 
 panel max: key("cmd-shift-k")
+please rewrap: key("alt-q")
 
 # for selecting a quick pick item
 pick <number_small>: key("down:{number_small-1} enter")
@@ -32,6 +33,8 @@ copy command <number_small>:
     key("down:{number_small-1}")
     sleep(350ms)
     user.copy_command_id()
+
+run test: user.vscode("testing.runAtCursor")
 
 to do open:
     key(cmd-p)

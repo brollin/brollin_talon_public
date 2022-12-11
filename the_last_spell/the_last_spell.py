@@ -39,8 +39,8 @@ grid_letters = [
     "z",
 ]
 
-GRID_WIDTH = 110
-GRID_HEIGHT = 85
+GRID_WIDTH = 112
+GRID_HEIGHT = 84
 # number of rose and columns. cannot be more than the length of the grid_letters array
 GRID_SIZE = 10
 
@@ -226,9 +226,14 @@ class SpellActions:
         ctx.tags = []
         spell_controller.close()
 
-    def spell_id_move(letter1: str, letter2: str):
+    def spell_id_move(letter1: str, letter2: str, mouse_button: int):
         """Move to a square by id"""
         spell_controller.go_to_id(letter1 + letter2)
+        if mouse_button > -1:
+            time.sleep(0.05)
+            ctrl.mouse_click(button=mouse_button, down=True)
+            time.sleep(0.05)
+            ctrl.mouse_click(button=mouse_button, up=True)
 
     def spell_double_click():
         """Perform a double click"""
