@@ -27,6 +27,7 @@ vintage disk:
 term clear: key(ctrl-l)
 term copy: insert("cp ")
 term cat: insert("cat ")
+term diff: insert("diff ")
 term list: insert("ls ")
 term move: insert("mv ")
 term remove: insert("rm ")
@@ -76,17 +77,28 @@ node pack install save: insert("npm install --save ")
 node pack install save dev: insert("npm install --save-dev ")
 node pack start: insert("npm start ")
 node pack run: insert("npm run ")
+node pack run dev: insert("npm run dev ")
 node pack help: insert("npm help ")
+node pack init: insert("npm init ")
 
 yarn: insert("yarn")
 yarn add: insert("yarn add ")
 yarn add dev: insert("yarn add --dev ")
+yarn remove: insert("yarn remove ")
 yarn dev: insert("yarn dev")
 yarn dev watch: insert("yarn dev -w")
 
 pip install: insert("pip3 install ")
 
 brew install: insert("brew install ")
+brew link: insert("brew link ")
+brew link force: insert("brew link --force")
+brew link force go: insert("brew link --force go@1.1")
+brew unlink: insert("brew unlink ")
 
 node version use: insert("nvm use ")
 node version install: insert("nvm install ")
+
+rectangle top right: key(ctrl-alt-i)
+
+process countries: "npm run processCountries"

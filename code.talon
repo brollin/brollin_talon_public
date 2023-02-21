@@ -1,6 +1,8 @@
 os: mac
 and app.bundle: com.microsoft.VSCode
 -
+commie: key(cmd-/)
+
 scroll down: key(ctrl-d)
 scroll up: key(ctrl-u)
 
@@ -20,6 +22,10 @@ tab move right: user.vscode("workbench.action.moveEditorRightInGroup")
 tab move left group: user.vscode("workbench.action.moveEditorToLeftGroup")
 tab move right group: user.vscode("workbench.action.moveEditorToRightGroup")
 tab closer: user.vscode("workbench.action.closeEditorsToTheRight")
+
+crossed: user.vscode("workbench.action.navigateEditorGroups")
+
+remove unused: user.vscode("typescript.removeUnusedImports")
 
 panel max: key("cmd-shift-k")
 please rewrap: key("alt-q")
@@ -42,3 +48,5 @@ to do open:
     insert("/Users/ben.rollin/todo.md")
     sleep(200ms)
     key(enter)
+
+re folk: key(cmd-1)

@@ -23,8 +23,9 @@ class Endpoint(TypedDict):
 
 class Service(TypedDict):
     id: str
+    githubPath: NotRequired[str]
     domains: Domains
     swagger: NotRequired[
         bool
     ]  # on true, will look for a swagger spec to define endpoints
-    endpoints: NotRequired[list[Endpoint]]
+    endpoints: list[Endpoint]
