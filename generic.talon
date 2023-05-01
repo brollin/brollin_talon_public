@@ -40,6 +40,7 @@ term talon: insert("cd ~/.talon/user/talon_umbrella\n")
 term talon log: insert("grc tail -f ~/.talon/talon.log\n")
 term projects: insert("cd ~/projects && c\n")
 term clever: insert("cd $CODE_HOME\n")
+term search: insert("rg ")
 snap dome: insert("snabbdom")
 
 # activate shortcat
@@ -81,10 +82,18 @@ node pack run dev: insert("npm run dev ")
 node pack help: insert("npm help ")
 node pack init: insert("npm init ")
 
+node pack ex: insert("npx ")
+node pack ex webpack: insert("npx webpack ")
+node pack ex <user.text>:
+    insert("npx ")
+    insert(text)
+
 yarn: insert("yarn")
 yarn add: insert("yarn add ")
 yarn add dev: insert("yarn add --dev ")
 yarn remove: insert("yarn remove ")
+yarn build: insert("yarn build ")
+yarn lint: insert("yarn lint ")
 yarn dev: insert("yarn dev")
 yarn dev watch: insert("yarn dev -w")
 
@@ -102,3 +111,38 @@ node version install: insert("nvm install ")
 rectangle top right: key(ctrl-alt-i)
 
 process countries: "npm run processCountries"
+
+folk gmail:
+    user.switcher_focus("firefox")
+    key(cmd-1)
+
+folk work [gmail]:
+    user.switcher_focus("firefox")
+    key(cmd-2)
+
+folk calendar:
+    user.switcher_focus("firefox")
+    key(cmd-3)
+
+folk slack:
+    user.switcher_focus("firefox")
+    key(cmd-4)
+
+folk Spotify:
+    user.switcher_focus("firefox")
+    key(cmd-5)
+
+folk discord:
+    user.switcher_focus("firefox")
+    key(cmd-6)
+
+folk zulip:
+    user.switcher_focus("firefox")
+    key(cmd-7)
+
+bit warden:
+    user.move_to_spot("center")
+    mouse_click(1)
+    user.up_n(1)
+    key(right)
+    key(right)

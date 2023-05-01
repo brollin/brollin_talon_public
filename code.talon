@@ -27,6 +27,10 @@ crossed: user.vscode("workbench.action.navigateEditorGroups")
 
 remove unused: user.vscode("typescript.removeUnusedImports")
 
+document this: user.vscode("docthis.documentThis")
+
+new folder: user.vscode("explorer.newFolder")
+
 panel max: key("cmd-shift-k")
 please rewrap: key("alt-q")
 
@@ -50,3 +54,7 @@ to do open:
     key(enter)
 
 re folk: key(cmd-1)
+
+complete:
+    key(tab)
+    key(enter)

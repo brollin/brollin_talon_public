@@ -1,7 +1,7 @@
 import time
 import typing
 from talon import Module, Context, ui, ctrl, canvas, screen, actions, imgui, clip
-from .services import services, get_full_github_path
+from .services import services, get_full_github_path, get_local_repo_path
 
 mod = Module()
 ctx = Context()
@@ -77,9 +77,6 @@ class SporcController:
         service = services[service_spoken]
         repo = service["id"]
 
-        # TODO: don't automatically copy to clipboard?
-        clip.set_text(repo)
-
         actions.insert(repo)
 
     def open(self, service_spoken: str, environment: str):
@@ -108,6 +105,19 @@ class SporcController:
             url = service["domains"][environment]
 
         actions.insert(url)
+
+    def open_vscode(self, service_spoken: str):
+        service = services[service_spoken]
+
+        command = "open -a 'Visual Studio Code' " + get_local_repo_path(service)
+        actions.user.system_command_nb(command)
+
+    def open_repo_directory(self, service_spoken: str):
+        service = services[service_spoken]
+
+        command = "cd " + get_local_repo_path(service)
+        actions.insert(command)
+        actions.key("enter")
 
 
 sporc_controller = SporcController()
@@ -156,3 +166,11 @@ class SporcActions:
     def sporc_link(service_spoken: str, environment: str):
         """Insert the service link (URL)"""
         sporc_controller.insert_link(service_spoken, environment)
+
+    def sporc_code(service_spoken: str):
+        """Open the service repository in VS code"""
+        sporc_controller.open_vscode(service_spoken)
+
+    def sporc_change_directory(service_spoken: str):
+        """Open the service repository in terminal"""
+        sporc_controller.open_repo_directory(service_spoken)

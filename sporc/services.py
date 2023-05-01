@@ -3,6 +3,12 @@ from .swagger import get_swagger_endpoints
 
 
 services: dict[str, Service] = {
+    "talon": {
+        "id": "talon_umbrella",
+        "repoPath": "~/.talon/user/talon_umbrella",
+        "domains": {"prod": "https://talonvoice.com/"},
+        "endpoints": [],
+    },
     "schools dash": {
         "id": "sd2",
         "githubPath": "Clever/sd2",
@@ -32,7 +38,7 @@ services: dict[str, Service] = {
         "githubPath": "Clever/launchpad",
         "domains": {
             "prod": "https://clever.com/in/brollin",
-            "dev": "https://clever-dev--launchpad.int.clever.com/in/brollin",
+            "dev": "https://clever-dev--launchpad--b46b913d.int.clever.com/in/brollin",
             "local": "http://localhost:5004/in/brollin",
         },
         "endpoints": [],
@@ -94,6 +100,23 @@ services: dict[str, Service] = {
         },
         "endpoints": [],
     },
+    "worldhopper": {
+        "id": "worldhopper",
+        "domains": {
+            "prod": "https://worldhopper.vercel.app",
+            "local": "http://localhost:3000",
+        },
+        "endpoints": [],
+    },
+    "conjurer": {
+        "id": "conjurer",
+        "githubPath": "SotSF/conjurer",
+        "domains": {
+            "prod": "https://conjurer-alpha.vercel.app",
+            "local": "http://localhost:3000",
+        },
+        "endpoints": [],
+    },
 }
 
 
@@ -101,6 +124,15 @@ def get_full_github_path(service: Service):
     return "https://github.com/" + (
         service["githubPath"] if "githubPath" in service else "brollin/" + service["id"]
     )
+
+
+def get_local_repo_path(service: Service):
+    if "repoPath" in service:
+        return service["repoPath"]
+    elif "githubPath" in service and service["githubPath"].startswith("Clever"):
+        return "~/go/src/github.com/Clever/" + service["id"]
+    else:
+        return "~/projects/" + service["id"]
 
 
 # get endpoints from any swagger services

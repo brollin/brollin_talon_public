@@ -24,6 +24,7 @@ class Endpoint(TypedDict):
 class Service(TypedDict):
     id: str
     githubPath: NotRequired[str]
+    repoPath: NotRequired[str]
     domains: Domains
     swagger: NotRequired[
         bool
