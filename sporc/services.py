@@ -74,6 +74,16 @@ services: dict[str, Service] = {
         },
         "endpoints": [],
     },
+    "ui": {
+        "id": "ui",
+        "githubPath": "Clever/clever-ui",
+        "domains": {
+            "prod": "https://master--62fbbb0daff0aa52aea739ac.chromatic.com/",
+            "dev": "https://master--62fbbb0daff0aa52aea739ac.chromatic.com/",
+            "local": "http://localhost:8080",  # update
+        },
+        "endpoints": [],
+    },
     "lila": {
         "id": "lila",
         "githubPath": "lichess-org/lila",
@@ -112,7 +122,7 @@ services: dict[str, Service] = {
         "id": "conjurer",
         "githubPath": "SotSF/conjurer",
         "domains": {
-            "prod": "https://conjurer-alpha.vercel.app",
+            "prod": "https://canopyconjurer.vercel.app",
             "local": "http://localhost:3000",
         },
         "endpoints": [],

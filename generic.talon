@@ -63,6 +63,8 @@ do again: core.repeat_phrase()
 # windowing commands from rectangle
 maximise: key(cmd-shift-m)
 snap middle: key(ctrl-alt-shift-`)
+snap left: key(ctrl-alt-left)
+snap right: key(ctrl-alt-right)
 win smaller: key(ctrl-alt--)
 win bigger: key(ctrl-alt-=)
 
@@ -73,6 +75,7 @@ consol log:
 
 node pack: insert("npm ")
 node pack install: insert("npm install ")
+node pack clean install: insert("npm ci ")
 node pack uninstall: insert("npm uninstall ")
 node pack install save: insert("npm install --save ")
 node pack install save dev: insert("npm install --save-dev ")
@@ -88,13 +91,15 @@ node pack ex <user.text>:
     insert("npx ")
     insert(text)
 
-yarn: insert("yarn")
+yarn: insert("yarn ")
+yarn <user.text>: insert("yarn " + text)
 yarn add: insert("yarn add ")
 yarn add dev: insert("yarn add --dev ")
+yarn upgrade: insert("yarn upgrade ")
 yarn remove: insert("yarn remove ")
 yarn build: insert("yarn build ")
 yarn lint: insert("yarn lint ")
-yarn dev: insert("yarn dev")
+yarn (dev | dove): insert("nvm use 16 && yarn dev")
 yarn dev watch: insert("yarn dev -w")
 
 pip install: insert("pip3 install ")
@@ -106,11 +111,14 @@ brew link force go: insert("brew link --force go@1.1")
 brew unlink: insert("brew unlink ")
 
 node version use: insert("nvm use ")
+node version use <user.number_string>:
+    insert("nvm use ")
+    insert(number_string)
+    key(enter)
+
 node version install: insert("nvm install ")
 
 rectangle top right: key(ctrl-alt-i)
-
-process countries: "npm run processCountries"
 
 folk gmail:
     user.switcher_focus("firefox")
