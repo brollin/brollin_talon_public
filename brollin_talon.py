@@ -41,7 +41,7 @@ class BrollinOverlay:
             self.screen.width / 3,
             0,
             self.screen.width / 3,
-            text_rectangle.height if len(self.sound_to_action) else 9,
+            text_rectangle.height if len(self.sound_to_action) else 7,
         )
 
         def draw_bar():

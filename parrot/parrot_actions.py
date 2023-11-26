@@ -20,7 +20,12 @@ ctx.lists["user.parrot_sound"] = {"tongue": "tongue_click", "caveman": "caveman"
 
 sound_to_action = {}
 
-profiles = {"second": {"tongue_click": "second"}}
+profiles = {
+    "second": {"tongue_click": "second"},
+    "scroller": {"tongue_click": "scroll", "caveman": "switch_direction"},
+}
+
+scroll_direction = 1
 
 DEBUG = False
 
@@ -29,6 +34,7 @@ DEBUG = False
 class ParrotActions:
     def do_mapped_parrot_action(sound: str):
         """Do the currently assigned parrot action"""
+        global scroll_direction
         action = "<unassigned>"
         if sound in sound_to_action:
             action = sound_to_action[sound]
@@ -41,6 +47,10 @@ class ParrotActions:
                 ctrl.mouse_click(button=button, up=True)
             elif "second" in action:
                 actions.core.repeat_command()
+            elif "scroll" in action:
+                actions.mouse_scroll(y=100 * scroll_direction)
+            elif "switch_direction" in action:
+                scroll_direction *= -1
             else:
                 actions.key(action)
 

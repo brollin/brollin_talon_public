@@ -45,6 +45,7 @@ copy command <number_small>:
     user.copy_command_id()
 
 run test: user.vscode("testing.runAtCursor")
+decorations: user.vscode("cursorless.toggleDecorations")
 
 to do open:
     key(cmd-p)

@@ -1,5 +1,7 @@
 app: iterm2
 -
+drain: key(alt-left)
+step: key(alt-right)
 scratcher: key(alt-backspace)
 complete:
     key(tab)

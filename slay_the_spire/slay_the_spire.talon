@@ -12,6 +12,7 @@ click enemy <number_small>: user.spire_enemy(number_small, 0)
 ^unmap [enemies]$: user.spire_clear_enemies()
 ^remap [enemies]$: user.spire_remap_enemies()
 spire grid: user.spire_activate_grid()
+(map or | mapper) <number_small>: user.spire_auto_map(number_small)
 #done:
 #    user.spire_close_grid()
 #    user.spire_enemy(1)
@@ -21,3 +22,14 @@ confirm:
     key(enter)
     user.spire_handle_bug()
 shop <number_small>: user.spire_shop_item(number_small)
+third: key(ctrl)
+fourth: key(ctrl)
+fifth: key(ctrl)
+sixth: key(ctrl)
+seventh: key(ctrl)
+eighth: key(ctrl)
+
+(head | use | tug) <number_small>:
+    insert(number_small)
+    sleep(0.1)
+    mouse_click(0)

@@ -76,6 +76,26 @@ class SpireController:
         self.label_to_enemy[label] = enemy
         self.redraw()
 
+    def auto_map(self, profile_number: int):
+        if profile_number == 1:
+            self.enemy_to_label = {1: "im"}
+        elif profile_number == 2:
+            self.enemy_to_label = {1: "lj", 2: "lp"}
+        elif profile_number == 3:
+            self.enemy_to_label = {1: "lh", 2: "ll", 3: "ln"}
+        elif profile_number == 4:
+            self.enemy_to_label = {1: "lh", 2: "lj", 3: "lm", 4: "lr"}
+        elif profile_number == 5:
+            self.enemy_to_label = {1: "ld", 2: "lh", 3: "lj", 4: "mm", 5: "lr"}
+        elif profile_number == 6:
+            self.enemy_to_label = {1: "jg", 2: "jj", 3: "jp"}
+
+        # reverse the mapping
+        self.label_to_enemy = {v: k for k, v in self.enemy_to_label.items()}
+
+        self.redraw()
+        self.go_to_enemy(1)
+
     def clear_enemies(self):
         self.enemy_to_label = {}
         self.label_to_enemy = {}
@@ -141,6 +161,8 @@ class SpireController:
             )
 
     def go_to_enemy(self, enemy: int):
+        print(self.enemy_to_label)
+        print(self.label_to_enemy)
         if enemy not in self.enemy_to_label:
             print(f"enemy {enemy} not found")
             return
@@ -197,6 +219,10 @@ class SpireActions:
     def spire_activate_grid():
         """Activate grid for mapping enemies"""
         spire_controller.setup(visible=True)
+
+    def spire_auto_map(number: int):
+        """Auto map enemies"""
+        spire_controller.auto_map(number)
 
     def spire_close_grid():
         """Close grid for mapping enemies"""

@@ -37,36 +37,21 @@ term code: insert("code ")
 term code here: insert("code .\n")
 term reverse: key(ctrl-r)
 term talon: insert("cd ~/.talon/user/talon_umbrella\n")
-term talon log: insert("grc tail -f ~/.talon/talon.log\n")
+term talon log: insert("tail -f ~/.talon/talon.log\n")
+# term talon log: insert("grc tail -f ~/.talon/talon.log\n")
 term projects: insert("cd ~/projects && c\n")
 term clever: insert("cd $CODE_HOME\n")
 term search: insert("rg ")
 snap dome: insert("snabbdom")
 
-# activate shortcat
+# activate homerow (gives clicking hints)
 slinks: key(cmd-shift-space)
-slinks <user.text>:
-    key(cmd-shift-space)
-    sleep(10ms)
-    insert(text)
-
-# activate vimac
-vintage links: key(ctrl-f)
 
 # switch to last application
-go switch:
-    key(cmd-tab)
+go switch: key(cmd-tab)
 
 disk: key(cmd-s)
 do again: core.repeat_phrase()
-
-# windowing commands from rectangle
-maximise: key(cmd-shift-m)
-snap middle: key(ctrl-alt-shift-`)
-snap left: key(ctrl-alt-left)
-snap right: key(ctrl-alt-right)
-win smaller: key(ctrl-alt--)
-win bigger: key(ctrl-alt-=)
 
 # javascript
 consol log:
@@ -99,7 +84,7 @@ yarn upgrade: insert("yarn upgrade ")
 yarn remove: insert("yarn remove ")
 yarn build: insert("yarn build ")
 yarn lint: insert("yarn lint ")
-yarn (dev | dove): insert("nvm use 16 && yarn dev")
+yarn (dev | dove): insert("yarn dev")
 yarn dev watch: insert("yarn dev -w")
 
 pip install: insert("pip3 install ")
@@ -113,6 +98,12 @@ brew unlink: insert("brew unlink ")
 node version use: insert("nvm use ")
 node version use <user.number_string>:
     insert("nvm use ")
+    insert(number_string)
+    key(enter)
+
+node version alias: insert("nvm alias default ")
+node version alias <user.number_string>:
+    insert("nvm alias default ")
     insert(number_string)
     key(enter)
 
@@ -148,9 +139,16 @@ folk zulip:
     user.switcher_focus("firefox")
     key(cmd-7)
 
+folk main:
+    user.switcher_focus("firefox")
+    key(cmd-8)
+
 bit warden:
-    user.move_to_spot("center")
-    mouse_click(1)
-    user.up_n(1)
-    key(right)
-    key(right)
+    key(cmd-shift-l)
+
+question [mark]: "?"
+
+secret fire: "se.cretfi.re"
+
+pad stack: " :"
+key(f5): user.toggle_talon()

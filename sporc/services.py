@@ -37,9 +37,9 @@ services: dict[str, Service] = {
         "id": "launchpad",
         "githubPath": "Clever/launchpad",
         "domains": {
-            "prod": "https://clever.com/in/brollin",
-            "dev": "https://clever-dev--launchpad--b46b913d.int.clever.com/in/brollin",
-            "local": "http://localhost:5004/in/brollin",
+            "prod": "https://clever.com/in/lpsandbox",
+            "dev": "https://clever-dev--launchpad--b46b913d.int.clever.com/in/lpsandbox",
+            "local": "http://localhost:5004/in/lpsandbox",
         },
         "endpoints": [],
     },
@@ -61,7 +61,7 @@ services: dict[str, Service] = {
             "dev": "https://clever-dev--idm-config-service--quail.int.clever.com",
             "local": "http://localhost:8080",
         },
-        "swagger": True,
+        # "swagger": True,
         "endpoints": [],
     },
     "idm": {
@@ -74,7 +74,7 @@ services: dict[str, Service] = {
         },
         "endpoints": [],
     },
-    "ui": {
+    "dewey three": {
         "id": "ui",
         "githubPath": "Clever/clever-ui",
         "domains": {
