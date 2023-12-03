@@ -1,0 +1,19 @@
+{
+  "tongue_click": {
+    "sounds": ["tongue_click"],
+    "threshold": {
+      ">power": 1,
+      ">probability": 0.95
+    }
+  },
+  "caveman": {
+    "sounds": ["caveman"],
+    "threshold": {
+      ">power": 20,
+      ">probability": 0.95
+    },
+    "throttle": {
+      "speech": 0.12
+    }
+  }
+}

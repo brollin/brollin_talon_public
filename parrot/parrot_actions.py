@@ -18,26 +18,41 @@ def alphanumeric_or_action(m) -> str:
 ctx = Context()
 ctx.lists["user.parrot_sound"] = {"tongue": "tongue_click", "caveman": "caveman"}
 
-sound_to_action = {}
 
 profiles = {
-    "second": {"tongue_click": "second"},
-    "scroller": {"tongue_click": "scroll", "caveman": "switch_direction"},
+    "zoomer": {"tongue_click": "second"},
+    "scroller": {"tongue_click": "scroll"},
 }
 
-scroll_direction = 1
 
 DEBUG = False
+
+
+class Parrot:
+    profile = ""
+    scroll_direction = 1
+
+    sound_to_action = {}
+
+    def get_profile_overlay_text(self) -> str:
+        if self.profile == "zoomer":
+            return "zoomer"
+        elif self.profile == "scroller":
+            return "scroller" + (" (down)" if self.scroll_direction == 1 else " (up)")
+
+        return self.profile
+
+
+parrot = Parrot()
 
 
 @mod.action_class
 class ParrotActions:
     def do_mapped_parrot_action(sound: str):
         """Do the currently assigned parrot action"""
-        global scroll_direction
         action = "<unassigned>"
-        if sound in sound_to_action:
-            action = sound_to_action[sound]
+        if sound in parrot.sound_to_action:
+            action = parrot.sound_to_action[sound]
             if len(action) == 1:
                 actions.key(action)
             elif "click" in action:
@@ -48,9 +63,7 @@ class ParrotActions:
             elif "second" in action:
                 actions.core.repeat_command()
             elif "scroll" in action:
-                actions.mouse_scroll(y=100 * scroll_direction)
-            elif "switch_direction" in action:
-                scroll_direction *= -1
+                actions.mouse_scroll(y=150 * parrot.scroll_direction)
             else:
                 actions.key(action)
 
@@ -59,18 +72,21 @@ class ParrotActions:
 
     def assign_parrot_action(sound: str, action: str):
         """Assign a parrot action"""
-        global sound_to_action
         if "nothing" in action and sound == "all":
-            sound_to_action = {}
+            parrot.sound_to_action = {}
             action = "<unassigned>"
-        elif "nothing" in action and sound in sound_to_action:
-            del sound_to_action[sound]
+        elif "nothing" in action and sound in parrot.sound_to_action:
+            del parrot.sound_to_action[sound]
             action = "<unassigned>"
         else:
-            sound_to_action[sound] = action
+            parrot.sound_to_action[sound] = action
 
         print(f"ASSIGNED parrot({sound}): {action}")
-        brollin_overlay.set_sound_to_action(sound_to_action)
+
+        text = "      ".join(
+            ": ".join(key_value) for key_value in parrot.sound_to_action.items()
+        )
+        brollin_overlay.set_overlay_text(text)
 
     def unassign_parrot_action(sound: str):
         """Unassign a parrot action"""
@@ -82,6 +98,13 @@ class ParrotActions:
             print("profile not found")
             return
 
-        global sound_to_action
-        sound_to_action = profiles[profile]
-        brollin_overlay.set_sound_to_action(sound_to_action)
+        parrot.profile = profile
+        parrot.sound_to_action = profiles[profile]
+
+        brollin_overlay.set_overlay_text(parrot.get_profile_overlay_text())
+
+    def parrot_special_action(action: str):
+        """Do a special parrot action"""
+        if action == "flip":
+            parrot.scroll_direction *= -1
+            brollin_overlay.set_overlay_text(parrot.get_profile_overlay_text())

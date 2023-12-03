@@ -14,5 +14,6 @@ parrot(caveman): user.do_mapped_parrot_action("caveman")
 
 pro <user.text>: user.set_parrot_profile(text)
 done: user.unassign_parrot_action("all")
-zoomer: user.set_parrot_profile("second")
+zoomer: user.set_parrot_profile("zoomer")
 scroller: user.set_parrot_profile("scroller")
+flip: user.parrot_special_action("flip")
