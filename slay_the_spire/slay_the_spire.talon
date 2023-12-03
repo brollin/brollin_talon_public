@@ -11,11 +11,11 @@ click enemy <number_small>: user.spire_enemy(number_small, 0)
 ^map [enemies]$: user.spire_activate_grid()
 ^unmap [enemies]$: user.spire_clear_enemies()
 ^remap [enemies]$: user.spire_remap_enemies()
-spire grid: user.spire_activate_grid()
+spire open: user.spire_activate_grid()
 (map or | mapper) <number_small>: user.spire_auto_map(number_small)
-#done:
-#    user.spire_close_grid()
-#    user.spire_enemy(1)
+spire close:
+    user.spire_close_grid()
+    user.spire_enemy(1)
 bug: user.spire_handle_bug()
 booty: user.spire_go_to_booty()
 confirm:
@@ -28,6 +28,7 @@ fifth: key(ctrl)
 sixth: key(ctrl)
 seventh: key(ctrl)
 eighth: key(ctrl)
+ninth: key(ctrl)
 
 (head | use | tug) <number_small>:
     insert(number_small)

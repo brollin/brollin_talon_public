@@ -80,7 +80,7 @@ class SpireController:
         if profile_number == 1:
             self.enemy_to_label = {1: "im"}
         elif profile_number == 2:
-            self.enemy_to_label = {1: "lj", 2: "lp"}
+            self.enemy_to_label = {1: "lj", 2: "ln"}
         elif profile_number == 3:
             self.enemy_to_label = {1: "lh", 2: "ll", 3: "ln"}
         elif profile_number == 4:
@@ -177,7 +177,7 @@ spire_controller = SpireController()
 class SpireActions:
     def spire_item(number: str):
         """Mouseover an item/potion"""
-        ctrl.mouse_move(775 + 78 * int(number), 50)
+        ctrl.mouse_move(775 + 72 * int(number), 50)
 
     def spire_relic(number: str):
         """Mouseover a relic"""
