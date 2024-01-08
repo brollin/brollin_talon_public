@@ -1,19 +1,43 @@
 {
-  "tongue_click": {
-    "sounds": ["tongue_click"],
+  "alveolar_click": {
+    "sounds": ["alveolar_click"],
     "threshold": {
-      ">power": 1,
-      ">probability": 0.95
-    }
-  },
-  "caveman": {
-    "sounds": ["caveman"],
-    "threshold": {
-      ">power": 20,
-      ">probability": 0.95
+      ">power": 3,
+      ">probability": 0.99
     },
     "throttle": {
-      "speech": 0.12
+      "speech": 0.5
+    }
+  },
+  "dental_click": {
+    "sounds": ["dental_click"],
+    "threshold": {
+      ">power": 3,
+      ">probability": 0.99
+    },
+    "throttle": {
+      "speech": 0.5
+    }
+  },
+  "hiss": {
+    "sounds": ["hiss"],
+    "threshold": {
+      ">power": 10,
+      ">probability": 0.99
+    },
+    "detect_after": 0.1,
+    "throttle": {
+      "speech": 0.5
+    }
+  },
+  "shush": {
+    "sounds": ["shush"],
+    "threshold": {
+      ">power": 15,
+      ">probability": 0.999
+    },
+    "throttle": {
+      "speech": 0.5
     }
   }
 }

@@ -40,12 +40,13 @@ term talon: insert("cd ~/.talon/user/talon_umbrella\n")
 term talon log: insert("tail -f ~/.talon/talon.log\n")
 # term talon log: insert("grc tail -f ~/.talon/talon.log\n")
 term projects: insert("cd ~/projects && c\n")
+term desktop: insert("cd ~/Desktop && c\n")
 term clever: insert("cd $CODE_HOME\n")
 term search: insert("rg ")
 snap dome: insert("snabbdom")
 
 # activate homerow (gives clicking hints)
-slinks: key(cmd-shift-space)
+coat: key(cmd-shift-space)
 
 # switch to last application
 go switch: key(cmd-tab)

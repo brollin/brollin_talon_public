@@ -1,4 +1,4 @@
-from talon import Module, Context, ctrl, actions
+from talon import Module, Context, ctrl, actions, noise, settings
 import time
 
 from ..brollin_talon import brollin_overlay
@@ -16,12 +16,13 @@ def alphanumeric_or_action(m) -> str:
 
 
 ctx = Context()
-ctx.lists["user.parrot_sound"] = {"tongue": "tongue_click", "caveman": "caveman"}
+ctx.lists["user.parrot_sound"] = {"tongue": "alveolar_click"}
 
 
 profiles = {
-    "zoomer": {"tongue_click": "second"},
-    "scroller": {"tongue_click": "scroll"},
+    "zoomer": {"alveolar_click": "second"},
+    "scroller": {"alveolar_click": "scroll", "dental_click": "flip"},
+    "mouser": {"alveolar_click": "mouser_action"},
 }
 
 
@@ -34,11 +35,15 @@ class Parrot:
 
     sound_to_action = {}
 
+    mouser_active = False
+
     def get_profile_overlay_text(self) -> str:
         if self.profile == "zoomer":
             return "zoomer"
         elif self.profile == "scroller":
-            return "scroller" + (" (down)" if self.scroll_direction == 1 else " (up)")
+            return "scroller"
+        elif self.profile == "mouser":
+            return "mouser"
 
         return self.profile
 
@@ -63,7 +68,21 @@ class ParrotActions:
             elif "second" in action:
                 actions.core.repeat_command()
             elif "scroll" in action:
-                actions.mouse_scroll(y=150 * parrot.scroll_direction)
+                scroll_amount = settings.get("user.mouse_wheel_down_amount")
+                actions.mouse_scroll(y=scroll_amount * parrot.scroll_direction)
+            elif "flip" in action:
+                parrot.scroll_direction *= -1
+                scroll_amount = settings.get("user.mouse_wheel_down_amount")
+                actions.mouse_scroll(y=scroll_amount * parrot.scroll_direction)
+            elif "mouser_action" in action:
+                actions.tracking.control_toggle(True)
+                if parrot.mouser_active:
+                    ctrl.mouse_click(button=0, down=True)
+                    time.sleep(0.01)
+                    ctrl.mouse_click(button=0, up=True)
+                else:
+                    parrot.mouser_active = True
+
             else:
                 actions.key(action)
 

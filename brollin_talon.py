@@ -109,3 +109,8 @@ class BrollinActions:
         """Turn talon on"""
         actions.speech.enable()
         actions.user.show_talon_overlay(1)
+
+    def open_file_in_vscode(path: str):
+        """Open a given file path with VSCode"""
+        command = "open -a 'Visual Studio Code' " + path
+        actions.user.system_command_nb(command)

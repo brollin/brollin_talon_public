@@ -74,8 +74,8 @@ services: dict[str, Service] = {
         },
         "endpoints": [],
     },
-    "dewey three": {
-        "id": "ui",
+    "ui": {
+        "id": "clever-ui",
         "githubPath": "Clever/clever-ui",
         "domains": {
             "prod": "https://master--62fbbb0daff0aa52aea739ac.chromatic.com/",

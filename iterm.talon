@@ -12,3 +12,6 @@ yes and:
 no and:
     key(n)
     key(enter)
+
+tab last: key("cmd-shift-[")
+tab next: key("cmd-shift-]")

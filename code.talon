@@ -31,7 +31,6 @@ document this: user.vscode("docthis.documentThis")
 
 new folder: user.vscode("explorer.newFolder")
 
-panel max: key("cmd-shift-k")
 please rewrap: key("alt-q")
 
 # for selecting a quick pick item
@@ -47,15 +46,14 @@ copy command <number_small>:
 run test: user.vscode("testing.runAtCursor")
 decorations: user.vscode("cursorless.toggleDecorations")
 
-to do open:
-    key(cmd-p)
-    sleep(200ms)
-    insert("/Users/ben.rollin/todo.md")
-    sleep(200ms)
-    key(enter)
+to do open: user.open_file_in_vscode("/Users/ben.rollin/todo.md")
+health open: user.open_file_in_vscode("/Users/ben.rollin/health.md")
 
 re folk: key(cmd-1)
 
 complete:
     key(tab)
     key(enter)
+
+# https://github.com/cursorless-dev/cursorless/wiki/Common-recommendations
+then: skip()

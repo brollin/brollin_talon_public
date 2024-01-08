@@ -7,15 +7,27 @@ from talon.types import point
 mod = Module()
 ctx = Context()
 
+enemy_profiles = {
+    "slimes": {1: "li", 2: "ln"},
+    "fungi": {1: "lg", 2: "lm"},
+    "gremlin": {1: "jg", 2: "jj", 3: "jn"},
+    "bronze": {1: "gh", 2: "gl", 3: "hr"},
+    "jaws": {1: "ld", 2: "lj", 3: "lr"},
+    "reptile": {1: "ii", 2: "im", 3: "ir"},
+    "collector": {1: "id", 2: "ih", 3: "in"},
+}
+
 
 class SpireController:
-    active = False
     mcanvas = None
     screen = None
     visible = False
     label_to_position = {}
     enemy_to_label = {}
     label_to_enemy = {}
+
+    def __init__(self) -> None:
+        self.setup(visible=False)
 
     def setup(self, *, visible: bool = True):
         self.screen = ui.screens()[0]
@@ -29,7 +41,6 @@ class SpireController:
             self.mcanvas.register("draw", self.draw)
             self.mcanvas.freeze()
             self.visible = True
-        self.active = True
 
         self.setup_grid()
 
@@ -96,6 +107,17 @@ class SpireController:
         self.redraw()
         self.go_to_enemy(1)
 
+    def auto_map_by_text(self, profile: str):
+        global enemy_profiles
+        if profile in enemy_profiles:
+            self.enemy_to_label = enemy_profiles[profile]
+
+        # reverse the mapping
+        self.label_to_enemy = {v: k for k, v in self.enemy_to_label.items()}
+
+        self.redraw()
+        self.go_to_enemy(1)
+
     def clear_enemies(self):
         self.enemy_to_label = {}
         self.label_to_enemy = {}
@@ -115,13 +137,12 @@ class SpireController:
         self.visible = False
 
     def close(self):
-        if not self.active:
+        if not self.visible:
             return
         self.mcanvas.unregister("draw", self.draw)
         self.mcanvas.close()
         self.mcanvas = None
         self.visible = False
-        self.active = False
 
     def redraw(self):
         if not self.visible:
@@ -223,6 +244,10 @@ class SpireActions:
     def spire_auto_map(number: int):
         """Auto map enemies"""
         spire_controller.auto_map(number)
+
+    def spire_auto_map_by_text(profile: str):
+        """Auto map enemies"""
+        spire_controller.auto_map_by_text(profile)
 
     def spire_close_grid():
         """Close grid for mapping enemies"""

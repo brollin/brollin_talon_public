@@ -40,3 +40,6 @@ go mod vendor: "go mod vendor"
 go 17 mod vendor: "go1.17.13 mod vendor"
 
 Yuman: "UM-"
+link Yuman <number>: "https://clever.atlassian.net/browse/UM-{number}"
+markdown link Yuman <number>: "[UM-{number}](https://clever.atlassian.net/browse/UM-{number})"
+
