@@ -46,8 +46,9 @@ copy command <number_small>:
 run test: user.vscode("testing.runAtCursor")
 decorations: user.vscode("cursorless.toggleDecorations")
 
-to do open: user.open_file_in_vscode("/Users/ben.rollin/todo.md")
-health open: user.open_file_in_vscode("/Users/ben.rollin/health.md")
+to do open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/todo.md")
+health open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/health.md")
+spire open: user.open_file_in_vscode("/Users/ben.rollin/spire.md")
 
 re folk: key(cmd-1)
 
@@ -57,3 +58,5 @@ complete:
 
 # https://github.com/cursorless-dev/cursorless/wiki/Common-recommendations
 then: skip()
+
+react apostrophe: "&apos;"

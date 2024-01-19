@@ -15,6 +15,10 @@ enemy_profiles = {
     "jaws": {1: "ld", 2: "lj", 3: "lr"},
     "reptile": {1: "ii", 2: "im", 3: "ir"},
     "collector": {1: "id", 2: "ih", 3: "in"},
+    "birds": {1: "id", 2: "il", 3: "ir"},
+    "awakened": {1: "id", 2: "il", 3: "ir"},
+    "shapes": {1: "ic", 2: "ih", 3: "in"},
+    "donut": {1: "hg", 2: "hn"},
 }
 
 

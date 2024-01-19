@@ -44,3 +44,8 @@ ninth: key(ctrl)
 use ten: key(ctrl)
 use: key(ctrl)
 word <user.text>: spire_enemy(number_small)
+
+info:
+    user.mouse_drag(1)
+    sleep(0.1)
+    user.mouse_drag_end()

@@ -7,7 +7,6 @@ re folk:
     key(cmd-l)
     key(f6)
 
-hints: key(ctrl-shift-space)
 links: key(ctrl-f12)
 relinks:
     key(cmd-l)
@@ -29,3 +28,6 @@ resize ex bigger: key(ctrl-cmd-b)
 resize ex smaller: key(ctrl-cmd-w)
 resize why bigger: key(ctrl-cmd-i)
 resize why smaller: key(ctrl-cmd-q)
+
+# gmail
+expand all: key(;)
