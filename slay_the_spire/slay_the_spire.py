@@ -7,31 +7,13 @@ from talon.types import point
 mod = Module()
 ctx = Context()
 
-enemy_profiles = {
-    "slimes": {1: "li", 2: "ln"},
-    "fungi": {1: "lg", 2: "lm"},
-    "gremlin": {1: "jg", 2: "jj", 3: "jn"},
-    "bronze": {1: "gh", 2: "gl", 3: "hr"},
-    "jaws": {1: "ld", 2: "lj", 3: "lr"},
-    "reptile": {1: "ii", 2: "im", 3: "ir"},
-    "collector": {1: "id", 2: "ih", 3: "in"},
-    "birds": {1: "ih", 2: "il", 3: "ir"},
-    "chosen": {1: "ii", 2: "in"},
-    "cultists": {1: "id", 2: "il", 3: "ir"},
-    "awakened": {1: "id", 2: "il", 3: "ir"},
-    "shapes": {1: "ic", 2: "ih", 3: "in"},
-    "donut": {1: "hg", 2: "hn"},
-    "tennis": {1: "ih", 2: "im"},
-}
-
 
 class SpireController:
     mcanvas = None
     screen = None
     visible = False
-    label_to_position = {}
-    enemy_to_label = {}
-    label_to_enemy = {}
+
+    enemies = []
 
     def __init__(self) -> None:
         self.setup(visible=False)
@@ -48,87 +30,6 @@ class SpireController:
             self.mcanvas.register("draw", self.draw)
             self.mcanvas.freeze()
             self.visible = True
-
-        self.setup_grid()
-
-    def setup_grid(self):
-        letters = [
-            "a",
-            "b",
-            "c",
-            "d",
-            "g",
-            "h",
-            "i",
-            "j",
-            "l",
-            "m",
-            "n",
-            "p",
-            "r",
-            "t",
-            "w",
-            "y",
-        ]
-        for row in range(12):
-            for col in range(15):
-                label = letters[row] + letters[col]
-                self.label_to_position[label] = point.Point2d(
-                    self.screen.width / 2 - 400 + col * 135,
-                    self.screen.height / 4 + row * 68,
-                )
-
-    def map_enemy(self, enemy_string: str, label_parts: typing.List[str]):
-        enemy = int(enemy_string)
-        label = "".join(label_parts)
-        if label not in self.label_to_position.keys():
-            print(f"could not find label {label}")
-            return
-
-        if (
-            enemy in self.enemy_to_label
-            and self.enemy_to_label[enemy] in self.label_to_enemy
-        ):
-            del self.label_to_enemy[self.enemy_to_label[enemy]]
-        self.enemy_to_label[enemy] = label
-        self.label_to_enemy[label] = enemy
-        self.redraw()
-
-    def auto_map(self, profile_number: int):
-        if profile_number == 1:
-            self.enemy_to_label = {1: "im"}
-        elif profile_number == 2:
-            self.enemy_to_label = {1: "lj", 2: "ln"}
-        elif profile_number == 3:
-            self.enemy_to_label = {1: "lh", 2: "ll", 3: "ln"}
-        elif profile_number == 4:
-            self.enemy_to_label = {1: "lh", 2: "lj", 3: "lm", 4: "lr"}
-        elif profile_number == 5:
-            self.enemy_to_label = {1: "ld", 2: "lh", 3: "lj", 4: "mm", 5: "lr"}
-        elif profile_number == 6:
-            self.enemy_to_label = {1: "jg", 2: "jj", 3: "jp"}
-
-        # reverse the mapping
-        self.label_to_enemy = {v: k for k, v in self.enemy_to_label.items()}
-
-        self.redraw()
-        self.go_to_enemy(1)
-
-    def auto_map_by_text(self, profile: str):
-        global enemy_profiles
-        if profile in enemy_profiles:
-            self.enemy_to_label = enemy_profiles[profile]
-
-        # reverse the mapping
-        self.label_to_enemy = {v: k for k, v in self.enemy_to_label.items()}
-
-        self.redraw()
-        self.go_to_enemy(1)
-
-    def clear_enemies(self):
-        self.enemy_to_label = {}
-        self.label_to_enemy = {}
-        self.redraw()
 
     def show(self):
         if self.visible:
@@ -188,12 +89,28 @@ class SpireController:
                 position.y + text_rect.height / 4,
             )
 
-    def go_to_enemy(self, enemy: int):
-        if enemy not in self.enemy_to_label:
-            print(f"enemy {enemy} not found")
+    def remap_enemies(self):
+        import urllib.request
+        import json
+
+        monster_data = json.loads(
+            urllib.request.urlopen("http://localhost:10463/monsters").read()
+        )
+
+        # flip the y coordinates
+        for monster in monster_data["monsters"]:
+            monster["y"] = self.screen.height - monster["y"]
+
+        self.enemies = monster_data["monsters"]
+
+    def go_to_enemy(self, enemy_number: int):
+        if len(self.enemies) < enemy_number:
+            print(f"enemy #{enemy_number} not found")
             return
-        position = self.label_to_position[self.enemy_to_label[enemy]]
-        ctrl.mouse_move(position.x, position.y)
+
+        enemy = self.enemies[enemy_number - 1]
+
+        ctrl.mouse_move(enemy["x"], enemy["y"])
 
 
 spire_controller = SpireController()
@@ -218,41 +135,14 @@ class SpireActions:
             time.sleep(0.1)
             ctrl.mouse_click(button=click, down=False)
 
-    def spire_map_enemy(enemy_and_label: typing.List[str]):
-        """Map an enemy location"""
-        # if len(enemy_and_label) % 3 == 0:
-        #     for i in range(0, len(enemy_and_label), 3):
-        #         print(i)
-        #         spire_controller.map_enemy(
-        #             enemy_and_label[i], enemy_and_label[i + 1 : i + 3]
-        #         )
-
-        if len(enemy_and_label) % 2 == 0:
-            for i in range(0, len(enemy_and_label), 2):
-                spire_controller.map_enemy((i // 2) + 1, enemy_and_label[i : i + 2])
-        spire_controller.close()
-        spire_controller.go_to_enemy(1)
-
-    def spire_clear_enemies():
-        """Clear all enemies"""
-        spire_controller.clear_enemies()
-
     def spire_remap_enemies():
         """Remap all enemies"""
-        spire_controller.clear_enemies()
-        spire_controller.setup(visible=True)
+        spire_controller.remap_enemies()
+        spire_controller.go_to_enemy(1)
 
     def spire_activate_grid():
         """Activate grid for mapping enemies"""
         spire_controller.setup(visible=True)
-
-    def spire_auto_map(number: int):
-        """Auto map enemies"""
-        spire_controller.auto_map(number)
-
-    def spire_auto_map_by_text(profile: str):
-        """Auto map enemies"""
-        spire_controller.auto_map_by_text(profile)
 
     def spire_close_grid():
         """Close grid for mapping enemies"""
@@ -287,14 +177,3 @@ class SpireActions:
         ctrl.mouse_move(x, y + 200)
         time.sleep(0.1)
         ctrl.mouse_click(button=0)
-
-    def spire_query_monster_locations():
-        """Query Say the Spire Mod for monster locations"""
-        import urllib.request
-        import json
-
-        monster_data = json.loads(
-            urllib.request.urlopen("http://localhost:10463/monsters").read()
-        )
-
-        print(monster_data)
