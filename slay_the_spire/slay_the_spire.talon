@@ -49,3 +49,9 @@ info:
     user.mouse_drag(1)
     sleep(0.1)
     user.mouse_drag_end()
+
+touchy:
+    user.mouse_drag(0)
+    sleep(0.1)
+    user.mouse_drag_end()
+

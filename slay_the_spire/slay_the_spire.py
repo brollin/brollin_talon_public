@@ -15,10 +15,13 @@ enemy_profiles = {
     "jaws": {1: "ld", 2: "lj", 3: "lr"},
     "reptile": {1: "ii", 2: "im", 3: "ir"},
     "collector": {1: "id", 2: "ih", 3: "in"},
-    "birds": {1: "id", 2: "il", 3: "ir"},
+    "birds": {1: "ih", 2: "il", 3: "ir"},
+    "chosen": {1: "ii", 2: "in"},
+    "cultists": {1: "id", 2: "il", 3: "ir"},
     "awakened": {1: "id", 2: "il", 3: "ir"},
     "shapes": {1: "ic", 2: "ih", 3: "in"},
     "donut": {1: "hg", 2: "hn"},
+    "tennis": {1: "ih", 2: "im"},
 }
 
 
@@ -186,8 +189,6 @@ class SpireController:
             )
 
     def go_to_enemy(self, enemy: int):
-        print(self.enemy_to_label)
-        print(self.label_to_enemy)
         if enemy not in self.enemy_to_label:
             print(f"enemy {enemy} not found")
             return
@@ -286,3 +287,14 @@ class SpireActions:
         ctrl.mouse_move(x, y + 200)
         time.sleep(0.1)
         ctrl.mouse_click(button=0)
+
+    def spire_query_monster_locations():
+        """Query Say the Spire Mod for monster locations"""
+        import urllib.request
+        import json
+
+        monster_data = json.loads(
+            urllib.request.urlopen("http://localhost:10463/monsters").read()
+        )
+
+        print(monster_data)
