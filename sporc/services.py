@@ -127,6 +127,20 @@ services: dict[str, Service] = {
         },
         "endpoints": [],
     },
+    "spire mod": {
+        "id": "SpeakTheSpireMod",
+        "domains": {
+            "prod": "",
+        },
+        "endpoints": [],
+    },
+    "spire": {
+        "id": "speak-the-spire-talon",
+        "domains": {
+            "prod": "",
+        },
+        "endpoints": [],
+    },
 }
 
 

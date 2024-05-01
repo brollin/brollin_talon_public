@@ -1,6 +1,10 @@
 os: mac
 os: windows
 -
+
+# enable emojis everywhere
+tag(): user.emoji
+
 # TODO: separate operating system specific features into their own files
 settings():
     user.screenshot_folder = "~/Desktop"
@@ -11,42 +15,7 @@ settings():
 clippy: edit.paste()
 clipsy: edit.copy()
 
-# terminal helpers
-term change: insert("cd ")
-term change <user.text>:
-    insert("cd ")
-    insert(text)
-    key(tab)
-term change back: insert("cd ..\n")
-term change last: insert("cd -\n")
-make dir: insert("mkdir ")
-vintage: insert("vim ")
-vintage disk:
-    insert(":wq")
-    key(enter)
-term clear: key(ctrl-l)
-term copy: insert("cp ")
-term cat: insert("cat ")
-term diff: insert("diff ")
-term list: insert("ls ")
-term move: insert("mv ")
-term remove: insert("rm ")
-term open: insert("open ")
-term open here: insert("open .\n")
-term code: insert("code ")
-term code here: insert("code .\n")
-term reverse: key(ctrl-r)
-term talon: insert("cd ~/.talon/user/talon_umbrella\n")
-term talon log: insert("tail -f ~/.talon/talon.log\n")
-# term talon log: insert("grc tail -f ~/.talon/talon.log\n")
-term projects: insert("cd ~/projects && c\n")
-term desktop: insert("cd ~/Desktop && c\n")
-term clever: insert("cd $CODE_HOME\n")
-term search: insert("rg ")
 snap dome: insert("snabbdom")
-
-# activate homerow (gives clicking hints)
-coat: key(cmd-shift-space)
 
 # switch to last application
 go switch: key(cmd-tab)
@@ -112,7 +81,7 @@ node version install: insert("nvm install ")
 
 rectangle top right: key(ctrl-alt-i)
 
-folk gmail:
+folk (gmail | mail):
     user.switcher_focus("firefox")
     key(cmd-1)
 
@@ -128,21 +97,21 @@ folk slack:
     user.switcher_focus("firefox")
     key(cmd-4)
 
-folk Spotify:
+folk discord:
     user.switcher_focus("firefox")
     key(cmd-5)
 
-folk discord:
+folk zulip:
     user.switcher_focus("firefox")
     key(cmd-6)
 
-folk zulip:
+folk main:
     user.switcher_focus("firefox")
     key(cmd-7)
 
-folk main:
-    user.switcher_focus("firefox")
-    key(cmd-8)
+folk Spotify:
+    user.switcher_focus("chrome")
+    key(cmd-1)
 
 bit warden:
     key(cmd-shift-l)
@@ -153,3 +122,23 @@ secret fire: "se.cretfi.re"
 
 pad stack: " :"
 key(f5): user.toggle_talon()
+
+center: user.move_to_spot("center")
+
+computer sleep:
+    user.move_to_spot("apple")
+    sleep(0.1)
+    mouse_click(0)
+    sleep(0.1)
+    key(down)
+    key(down)
+    key(down)
+    key(down)
+    key(down)
+    key(down)
+    user.sleep_talon()
+
+^<number> point <number>$:
+    insert(number_1)
+    insert(".")
+    insert(number_2)

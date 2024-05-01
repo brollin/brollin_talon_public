@@ -1,6 +1,6 @@
 from .sporc_types import Endpoint
 
-import yaml
+# import yaml
 
 
 def get_yaml_anchors(stream):

@@ -1,5 +1,4 @@
-import time
-import typing
+from math import comb
 from talon import Module, Context, ui, ctrl, cron, canvas, screen, actions
 from talon.skia import Paint, Image
 from talon.types import point
@@ -9,6 +8,10 @@ mod.list(
     "calculator_operation",
     desc="List of all supported mathematical calculator operations",
 )
+mod.list(
+    "calculator_spire_operation",
+    desc="List of all supported Slay the Spire calculator operations",
+)
 
 ctx = Context()
 ctx.lists["user.calculator_operation"] = {
@@ -16,8 +19,21 @@ ctx.lists["user.calculator_operation"] = {
     "minus": "-",
     "times": "*",
     "divided by": "/",
+    "choose": "choose",
 }
+ctx.lists["user.calculator_spire_operation"] = [
+    "weaken",
+    "vulnerable",
+    "weaken vulnerable",
+    "vulnerable weaken",
+]
 
+spire_operation_factor = {
+    "weaken": 0.75,
+    "vulnerable": 1.5,
+    "weaken vulnerable": 9 / 8,
+    "vulnerable weaken": 9 / 8,
+}
 
 previous_result = None
 
@@ -53,6 +69,7 @@ class CalculatorController:
     def hide(self):
         if not self.visible:
             return
+        self.mcanvas.freeze()
         self.mcanvas.unregister("draw", self.draw)
         self.visible = False
 
@@ -78,7 +95,7 @@ class CalculatorController:
         paint.textsize = 30
         canvas.paint.text_align = canvas.paint.TextAlign.CENTER
 
-        text = f"{self.number1} {self.operation} {self.number2} = {self.result}"
+        text = self.display_text
         text_rect = canvas.paint.measure_text(text)[1]
         background_rect = text_rect.copy()
         background_rect.center = point.Point2d(
@@ -98,15 +115,22 @@ class CalculatorController:
         )
 
     def calculate(self, operation: str, number1: int, number2: int):
-        # print(f"Calculating: {number1} {operation} {number2}")
+        if operation == "choose":
+            self.result = comb(number1, number2)
+        else:
+            self.result = eval(f"{number1} {operation} {number2}")
+        self.display_text = f"{number1} {operation} {number2} = {self.result}"
 
         self.visible = True
-        self.operation = operation
-        self.number1 = number1
-        self.number2 = number2
-        self.result = eval(f"{number1} {operation} {number2}")
         self.redraw()
-        cron.after("2s", self.hide)
+
+    def spire_calculate(self, operation: str, number1: int):
+        self.result = spire_operation_factor[operation] * number1
+        floored_result = int(self.result)
+        self.display_text = f"{operation} {number1} = {self.result} = {floored_result}"
+
+        self.visible = True
+        self.redraw()
 
 
 calculator_controller = CalculatorController()
@@ -117,3 +141,11 @@ class CalculatorActions:
     def calculator_calculate(operation: str, number1: int, number2: int):
         """Perform a calculation"""
         calculator_controller.calculate(operation, number1, number2)
+
+    def calculator_spire_calculate(spire_operation: str, number1: int):
+        """Perform a calculation"""
+        calculator_controller.spire_calculate(spire_operation, number1)
+
+    def calculator_hide():
+        """Hide the calculator canvas"""
+        calculator_controller.hide()
