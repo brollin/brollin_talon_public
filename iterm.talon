@@ -2,6 +2,7 @@ app: iterm2
 -
 drain: key(alt-left)
 step: key(alt-right)
+tailer: key("alt-right:{20}")
 scratcher: key(alt-backspace)
 complete:
     key(tab)
@@ -48,3 +49,6 @@ term projects: insert("cd ~/projects && c\n")
 term desktop: insert("cd ~/Desktop && c\n")
 term clever: insert("cd $CODE_HOME\n")
 term search: insert("rg ")
+
+# from my old terminal alias gpuo
+guh poo oh: "git push --set-upstream origin $(git name-rev --name-only HEAD)\n"

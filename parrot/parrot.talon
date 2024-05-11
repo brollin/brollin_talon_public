@@ -26,6 +26,6 @@ parrot(hiss):
 pro <user.text>: user.set_parrot_profile(text)
 finished: user.unassign_parrot_action("all")
 zoomer: user.set_parrot_profile("zoomer")
-scroller: user.set_parrot_profile("scroller")
-mouser: user.set_parrot_profile("mouser")
+# scroller: user.set_parrot_profile("scroller")
+# mouser: user.set_parrot_profile("mouser")
 # flip: user.parrot_special_action("flip")

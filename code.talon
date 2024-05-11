@@ -33,11 +33,13 @@ document this: user.vscode("docthis.documentThis")
 
 new folder: user.vscode("explorer.newFolder")
 
+file keep: user.vscode("workbench.action.keepEditor")
+
 please rewrap: key("alt-q")
 
 # for selecting a quick pick item
-pick <number_small>: key("down:{number_small-1} enter")
-pick up <number_small>: key("up:{number_small} enter")
+choose <number_small>: key("down:{number_small-1} enter")
+choose up <number_small>: key("up:{number_small} enter")
 
 copy command: user.copy_command_id()
 copy command <number_small>:
@@ -47,11 +49,6 @@ copy command <number_small>:
 
 run test: user.vscode("testing.runAtCursor")
 decorations: user.vscode("cursorless.toggleDecorations")
-
-to do open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/todo.md")
-health open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/health.md")
-game open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/game.md")
-spire open: user.open_file_in_vscode("/Users/ben.rollin/spire.md")
 
 re folk: key(cmd-1)
 

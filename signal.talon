@@ -8,3 +8,8 @@ message <number_small>:
     repeat(number_small - 1)
     key(enter)
 
+voice message:
+    key(tab)
+    key(tab)
+    key(enter)
+    user.sleep_talon()

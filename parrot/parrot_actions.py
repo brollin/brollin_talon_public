@@ -66,7 +66,7 @@ class ParrotActions:
                 time.sleep(0.1)
                 ctrl.mouse_click(button=button, up=True)
             elif "second" in action:
-                actions.core.repeat_command()
+                actions.core.repeat_phrase(1)
             elif "scroll" in action:
                 scroll_amount = settings.get("user.mouse_wheel_down_amount")
                 actions.mouse_scroll(y=scroll_amount * parrot.scroll_direction)
