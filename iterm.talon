@@ -16,6 +16,11 @@ no and:
 
 tab last: key("cmd-shift-[")
 tab next: key("cmd-shift-]")
+panel max: key(cmd-shift-enter)
+panel up: key(cmd-alt-up)
+panel down: key(cmd-alt-down)
+panel left: key(cmd-alt-left)
+panel right: key(cmd-alt-right)
 
 # terminal helpers
 term change: insert("cd ")

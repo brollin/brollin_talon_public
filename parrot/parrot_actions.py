@@ -1,4 +1,4 @@
-from talon import Module, Context, ctrl, actions, noise, settings
+from talon import Module, Context, ctrl, actions, noise, settings, app
 import time
 
 from ..brollin_talon import brollin_overlay
@@ -20,6 +20,7 @@ ctx.lists["user.parrot_sound"] = {"tongue": "alveolar_click"}
 
 
 profiles = {
+    "": {},
     "zoomer": {"alveolar_click": "second"},
     "scroller": {"alveolar_click": "scroll", "dental_click": "flip"},
     "mouser": {"alveolar_click": "mouser_action"},
@@ -39,16 +40,23 @@ class Parrot:
 
     def get_profile_overlay_text(self) -> str:
         if self.profile == "zoomer":
-            return "zoomer"
+            return ""
         elif self.profile == "scroller":
             return "scroller"
         elif self.profile == "mouser":
             return "mouser"
 
-        return self.profile
+        return "no profile"
 
 
 parrot = Parrot()
+
+
+def set_initial_parrot_profile():
+    actions.user.set_parrot_profile("zoomer")
+
+
+app.register("ready", set_initial_parrot_profile)
 
 
 @mod.action_class
@@ -91,10 +99,7 @@ class ParrotActions:
 
     def assign_parrot_action(sound: str, action: str):
         """Assign a parrot action"""
-        if "nothing" in action and sound == "all":
-            parrot.sound_to_action = {}
-            action = "<unassigned>"
-        elif "nothing" in action and sound in parrot.sound_to_action:
+        if "nothing" in action and sound in parrot.sound_to_action:
             del parrot.sound_to_action[sound]
             action = "<unassigned>"
         else:
