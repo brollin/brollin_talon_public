@@ -8,6 +8,7 @@ re folk:
     key(f6)
 
 links: key(ctrl-f12)
+blinks: key(alt-f12)
 relinks:
     key(cmd-l)
     key(f6)
