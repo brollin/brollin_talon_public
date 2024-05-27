@@ -13,6 +13,9 @@ yes and:
 no and:
     key(n)
     key(enter)
+redo:
+    key(up)
+    key(enter)
 
 tab last: key("cmd-shift-[")
 tab next: key("cmd-shift-]")
@@ -52,7 +55,6 @@ term talon log: insert("tail -f ~/.talon/talon.log\n")
 # term talon log: insert("grc tail -f ~/.talon/talon.log\n")
 term projects: insert("cd ~/projects && c\n")
 term desktop: insert("cd ~/Desktop && c\n")
-term clever: insert("cd $CODE_HOME\n")
 term search: insert("rg ")
 
 # from my old terminal alias gpuo

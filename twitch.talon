@@ -2,6 +2,15 @@ tag: browser
 browser.host: www.twitch.tv
 -
 
+emoji give: " GivePLZ "
+emoji take: " TakeNRG "
+back to Lynn: " b2wLyn "
+give take Lynn: " GivePLZ b2wLyn TakeNRG "
+give take <user.text>:
+    insert(" GivePLZ ")
+    insert(text)
+    insert(" TakeNRG ")
+
 gauri hype: "gauriHype"
 gauri love: "gauriLove"
 gauri flag: "gauriFlag"
@@ -31,3 +40,5 @@ pepe jam: " PepeJam "
 pepe laugh: " PepeLaugh "
 clueless: " Clueless "
 aware: " Aware "
+
+scratcher: key(alt-backspace)

@@ -1,5 +1,4 @@
 from .sporc_types import Service
-from .swagger import get_swagger_endpoints
 
 
 services: dict[str, Service] = {
@@ -7,81 +6,6 @@ services: dict[str, Service] = {
         "id": "talon_umbrella",
         "repoPath": "~/.talon/user/talon_umbrella",
         "domains": {"prod": "https://talonvoice.com/"},
-        "endpoints": [],
-    },
-    "schools dash": {
-        "id": "sd2",
-        "githubPath": "Clever/sd2",
-        "domains": {
-            "prod": "https://schools.clever.com",
-            "dev": "https://clever-dev--sd2.int.clever.com",
-            "local": "http://localhost:5013",
-        },
-        "endpoints": [
-            {
-                "name": "users",
-                "method": "GET",
-                "path": "/users",
-                "queryParameters": ["limit"],
-            },
-            {
-                "name": "student",
-                "method": "GET",
-                "path": "/students/{studentID}",
-                "pathParameters": ["studentID"],
-                "queryParameters": ["limit"],
-            },
-        ],
-    },
-    "launchpad": {
-        "id": "launchpad",
-        "githubPath": "Clever/launchpad",
-        "domains": {
-            "prod": "https://clever.com/in/lpsandbox",
-            "dev": "https://clever-dev--launchpad--b46b913d.int.clever.com/in/lpsandbox",
-            "local": "http://localhost:5004/in/lpsandbox",
-        },
-        "endpoints": [],
-    },
-    "ham": {
-        "id": "hall-monitor",
-        "githubPath": "Clever/hall-monitor",
-        "domains": {
-            "prod": "https://hall-monitor.int.clever.com",
-            "dev": "https://clever-dev--hall-monitor.int.clever.com",
-            "local": "http://localhost:5012",
-        },
-        "endpoints": [],
-    },
-    "idm config": {
-        "id": "idm-config-service",
-        "githubPath": "Clever/idm-config-service",
-        "domains": {
-            "prod": "https://production--idm-config-service--crossbill.int.clever.com",
-            "dev": "https://clever-dev--idm-config-service--quail.int.clever.com",
-            "local": "http://localhost:8080",
-        },
-        # "swagger": True,
-        "endpoints": [],
-    },
-    "idm": {
-        "id": "idm",
-        "githubPath": "Clever/idm",
-        "domains": {
-            "prod": "https://production--idm-config-service--crossbill.int.clever.com",
-            "dev": "https://clever-dev--idm-config-service--quail.int.clever.com",
-            "local": "http://localhost:8080",
-        },
-        "endpoints": [],
-    },
-    "ui": {
-        "id": "clever-ui",
-        "githubPath": "Clever/clever-ui",
-        "domains": {
-            "prod": "https://master--62fbbb0daff0aa52aea739ac.chromatic.com/",
-            "dev": "https://master--62fbbb0daff0aa52aea739ac.chromatic.com/",
-            "local": "http://localhost:8080",  # update
-        },
         "endpoints": [],
     },
     "lila": {
@@ -153,17 +77,5 @@ def get_full_github_path(service: Service):
 def get_local_repo_path(service: Service):
     if "repoPath" in service:
         return service["repoPath"]
-    elif "githubPath" in service and service["githubPath"].startswith("Clever"):
-        return "~/go/src/github.com/Clever/" + service["id"]
     else:
         return "~/projects/" + service["id"]
-
-
-# get endpoints from any swagger services
-for service_spoken, service in services.items():
-    if "swagger" in service and service["swagger"] is True:
-        services[service_spoken]["endpoints"] = get_swagger_endpoints(
-            "/Users/ben.rollin/go/src/github.com/Clever/"
-            + service["id"]
-            + "/swagger.yml"
-        )

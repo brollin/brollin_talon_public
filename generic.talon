@@ -85,6 +85,17 @@ computer sleep:
     insert(number_2)
 
 to do open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/todo.md")
+tracker open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/tracker.md")
 health open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/health.md")
 game open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/game.md")
 spire open: user.open_file_in_vscode("/Users/ben.rollin/spire.md")
+
+track <number>:
+    mimic("post next chart data")
+    mimic("center this")
+    key("left")
+    insert(",")
+    insert(number)
+
+stowner: user.mouse_scroll_down(8)
+supper: user.mouse_scroll_up(8)
