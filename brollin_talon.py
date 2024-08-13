@@ -18,11 +18,19 @@ def testing_hiss(active):
 # noise.register("pop", testing_pop)
 # noise.register("hiss", testing_hiss)
 
+mode_color = {
+    "sleep": "8f0000",
+    "command": "008f00",
+    "mixed": "00008f",
+    "dictation": "8f008f",
+}
+
 
 class BrollinOverlay:
     talon_awake = True
     screen = ui.screens()[0]
     overlay_text = ""
+    mode = "command"
 
     def __init__(self) -> None:
         self.mcanvas = canvas.Canvas.from_screen(self.screen)
@@ -43,7 +51,7 @@ class BrollinOverlay:
         )
 
         def draw_bar():
-            canvas.paint.color = "008f00" if self.talon_awake else "8f0000"
+            canvas.paint.color = mode_color[self.mode]
             canvas.paint.style = Paint.Style.FILL
             canvas.draw_rect(bar_rectangle)
 
@@ -67,7 +75,11 @@ class BrollinOverlay:
         self.mcanvas.freeze()
 
     def set_awake(self, awake=True):
-        self.talon_awake = awake
+        self.mode = "command" if awake else "sleep"
+        self.redraw()
+
+    def set_mode(self, mode):
+        self.mode = mode
         self.redraw()
 
     def set_overlay_text(self, new_text: str):
@@ -103,14 +115,22 @@ class BrollinActions:
     def sleep_talon():
         """Turn talon off"""
         actions.speech.disable()
-        actions.user.show_talon_overlay(0)
+        brollin_overlay.set_awake(False)
 
     def wake_talon():
         """Turn talon on"""
         actions.speech.enable()
-        actions.user.show_talon_overlay(1)
+        brollin_overlay.set_awake(True)
+
+    def set_talon_mode_color(mode: str):
+        """Set talon mode color"""
+        brollin_overlay.set_mode(mode)
 
     def open_file_in_vscode(path: str):
         """Open a given file path with VSCode"""
         command = "open -a 'Visual Studio Code' " + path
         actions.user.system_command_nb(command)
+
+    def open_path_with_default_program(path: str):
+        """Open path with default program"""
+        actions.user.system_command_nb("open " + path)
