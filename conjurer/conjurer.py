@@ -94,5 +94,5 @@ class ConjurerActions:
 
     def conjurer_send_action(action: str, value: str):
         """Send action message to conjurer app"""
-        # app.notify(f"Action: {value}")
+        app.notify(f"action: {action}, value: {value}")
         send_action_message(action, value=value)
