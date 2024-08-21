@@ -22,9 +22,18 @@ ctx.lists["user.conjurer_action"] = {
     "beginning": "goToBeginning",
     "begin": "goToBeginning",
     "go to end": "goToEnd",
+    "zoom in": "zoomIn",
+    "zoom out": "zoomOut",
 }
 ctx.lists["user.conjurer_action_with_args"] = {
     "layer": "selectLayer",
+    "go": "goToTime",
+    "move": "moveBlockForwardRelative",
+    "move back": "moveBlockBackwardRelative",
+    "move to": "moveBlockAbsolute",
+    "extend": "extendBlockRelative",
+    "shrink": "shrinkBlockRelative",
+    "extend until": "extendBlockAbsolute",
 }
 
 
@@ -57,5 +66,5 @@ class ConjurerActions:
 
     def conjurer_send_action(action: str):
         """Send action message to conjurer app"""
-        app.notify(f"action: {action}")
+        # app.notify(f"action: {action}")
         send_action_message(action)
