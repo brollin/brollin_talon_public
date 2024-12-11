@@ -23,7 +23,7 @@ profiles = {
     "": {},
     "zoomer": {"alveolar_click": "second"},
     "scroller": {"alveolar_click": "scroll", "dental_click": "flip"},
-    "mouser": {"alveolar_click": "mouser_action"},
+    "gazer": {"alveolar_click": "gazer_action"},
 }
 
 
@@ -36,15 +36,15 @@ class Parrot:
 
     sound_to_action = {}
 
-    mouser_active = False
+    gazer_active = False
 
     def get_profile_overlay_text(self) -> str:
         if self.profile == "zoomer":
             return ""
         elif self.profile == "scroller":
             return "scroller"
-        elif self.profile == "mouser":
-            return "mouser"
+        elif self.profile == "gazer":
+            return ""
 
         return "no profile"
 
@@ -53,7 +53,7 @@ parrot = Parrot()
 
 
 def set_initial_parrot_profile():
-    actions.user.set_parrot_profile("zoomer")
+    actions.user.set_parrot_profile("gazer")
 
 
 app.register("ready", set_initial_parrot_profile)
@@ -82,14 +82,14 @@ class ParrotActions:
                 parrot.scroll_direction *= -1
                 scroll_amount = settings.get("user.mouse_wheel_down_amount")
                 actions.mouse_scroll(y=scroll_amount * parrot.scroll_direction)
-            elif "mouser_action" in action:
-                actions.tracking.control_toggle(True)
-                if parrot.mouser_active:
+            elif "gazer_action" in action:
+                # actions.tracking.control_zoom_toggle(True)
+                if parrot.gazer_active:
                     ctrl.mouse_click(button=0, down=True)
                     time.sleep(0.01)
                     ctrl.mouse_click(button=0, up=True)
                 else:
-                    parrot.mouser_active = True
+                    parrot.gazer_active = True
 
             else:
                 actions.key(action)

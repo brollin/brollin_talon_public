@@ -46,7 +46,7 @@ services: dict[str, Service] = {
         "id": "conjurer",
         "githubPath": "SotSF/conjurer",
         "domains": {
-            "prod": "https://canopyconjurer.vercel.app",
+            "prod": "https://conjurer.se.cretfi.re",
             "local": "http://localhost:3000",
         },
         "endpoints": [],
@@ -54,14 +54,69 @@ services: dict[str, Service] = {
     "spire mod": {
         "id": "SpeakTheSpireMod",
         "domains": {
+            "prod": "https://steamcommunity.com/sharedfiles/filedetails/?id=3159200524",
+        },
+        "endpoints": [],
+    },
+    "logan mod": {
+        "id": "LoganMod",
+        "domains": {
+            "prod": "https://steamcommunity.com/sharedfiles/filedetails/?id=3266253644",
+        },
+        "endpoints": [],
+    },
+    "battle mod": {
+        "id": "BattleStatsMod",
+        "domains": {
             "prod": "",
         },
         "endpoints": [],
     },
     "spire": {
         "id": "speak-the-spire-talon",
+        "repoPath": "~/.talon/user/talon_umbrella/speak-the-spire-talon",
         "domains": {
-            "prod": "",
+            "prod": "https://steamcommunity.com/sharedfiles/filedetails/?id=3159200524",
+        },
+        "endpoints": [],
+    },
+    "tracker": {
+        "id": "tracker-app",
+        "domains": {
+            "prod": "http://localhost:5173",
+            "local": "http://localhost:5173",
+        },
+        "endpoints": [],
+    },
+    "game": {
+        "id": "game-wip",
+        "domains": {
+            "prod": "http://localhost:3000",
+            "local": "http://localhost:3000",
+        },
+        "endpoints": [],
+    },
+    "craft": {
+        "id": "craftinginterpreters",
+        "githubPath": "munificent/craftinginterpreters",
+        "domains": {
+            "prod": "https://craftinginterpreters.com/contents.html",
+        },
+        "endpoints": [],
+    },
+    "lox": {
+        "id": "loxcraft",
+        "domains": {
+            "prod": "https://craftinginterpreters.com/contents.html",
+        },
+        "endpoints": [],
+    },
+    "sotsf": {
+        "id": "sotsf-website",
+        "githubPath": "sotsf/sotsf-website",
+        "domains": {
+            "prod": "https://sotsf-website.vercel.app",
+            "local": "http://localhost:3001",
         },
         "endpoints": [],
     },

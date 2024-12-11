@@ -53,9 +53,13 @@ folk zulip:
     user.switcher_focus("firefox")
     key(cmd-6)
 
-folk main:
+[folk] tracker:
     user.switcher_focus("firefox")
     key(cmd-7)
+
+folk main:
+    user.switcher_focus("firefox")
+    key(cmd-8)
 
 folk Spotify:
     user.switcher_focus("chrome")
@@ -87,15 +91,22 @@ computer sleep:
 to do open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/todo.md")
 tracker open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/tracker.md")
 health open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/health.md")
+journal open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/journal.md")
 game open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/game.md")
 spire open: user.open_file_in_vscode("/Users/ben.rollin/spire.md")
 
-track <number>:
-    mimic("post next chart data")
-    mimic("center this")
-    key("left")
-    insert(",")
-    insert(number)
+Spotify hunt <user.text>:
+    user.switcher_focus("chrome")
+    user.rango_run_action_on_reference("clickElement", "search")
+    insert(text)
+
+wake up: skip()
+
+open <user.system_path>: user.open_path_with_default_program(system_path)
 
 stowner: user.mouse_scroll_down(8)
 supper: user.mouse_scroll_up(8)
+
+scrapey: key("escape:{5}")
+
+cargo run: insert("cargo run")

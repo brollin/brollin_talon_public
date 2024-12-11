@@ -5,7 +5,10 @@ parrot(alveolar_click):
 	user.do_mapped_parrot_action("alveolar_click")
 parrot(dental_click):
 	# app.notify("dental_click")
-	user.do_mapped_parrot_action("dental_click")
+	# user.do_mapped_parrot_action("dental_click")
+	mimic("model fix grammar block this")
+	# tracking.control_zoom_toggle()
+    # tracking.control_toggle()
 parrot(shush):
 	# app.notify("shush")
 	user.do_mapped_parrot_action("shush")
@@ -27,5 +30,5 @@ parrot(hiss):
 finished: user.set_parrot_profile("")
 zoomer: user.set_parrot_profile("zoomer")
 # scroller: user.set_parrot_profile("scroller")
-# mouser: user.set_parrot_profile("mouser")
+gazer: user.set_parrot_profile("gazer")
 # flip: user.parrot_special_action("flip")

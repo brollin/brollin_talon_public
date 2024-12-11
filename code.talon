@@ -25,7 +25,7 @@ tab move left group: user.vscode("workbench.action.moveEditorToLeftGroup")
 tab move right group: user.vscode("workbench.action.moveEditorToRightGroup")
 tab closer: user.vscode("workbench.action.closeEditorsToTheRight")
 
-crossed: user.vscode("workbench.action.navigateEditorGroups")
+crosser: user.vscode("workbench.action.navigateEditorGroups")
 
 remove unused: user.vscode("remove-unused-imports.main")
 
@@ -76,3 +76,15 @@ package and run:
 panel max: key(cmd-shift-k)
 panel right: user.vscode("workbench.action.positionPanelRight")
 panel (bottom | bot): user.vscode("workbench.action.positionPanelBottom")
+
+{user.search_engine} scout <user.cursorless_target>:
+    text = user.cursorless_get_text(cursorless_target)
+    user.search_with_search_engine(search_engine, text)
+
+imports fix:
+    user.vscode_add_missing_imports()
+    sleep(100ms)
+    user.vscode("editor.action.organizeImports")
+
+entry new:
+    mimic("pre file this post section this slap slap hash hash pad date insert slap slap")

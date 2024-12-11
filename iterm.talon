@@ -55,7 +55,11 @@ term talon log: insert("tail -f ~/.talon/talon.log\n")
 # term talon log: insert("grc tail -f ~/.talon/talon.log\n")
 term projects: insert("cd ~/projects && c\n")
 term desktop: insert("cd ~/Desktop && c\n")
-term search: insert("rg ")
+term (search | grep): insert("rg ")
 
 # from my old terminal alias gpuo
 guh poo oh: "git push --set-upstream origin $(git name-rev --name-only HEAD)\n"
+
+# update talon repos (untested)
+talon user update:
+    "find {path.talon_user()} -type d -name .git -print -execdir git pull --ff-only \\;\n"

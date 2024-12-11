@@ -28,3 +28,5 @@ touchy:
     user.mouse_drag(0)
     sleep(0.1)
     user.mouse_drag_end()
+
+turn turn: key(e)

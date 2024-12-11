@@ -40,5 +40,13 @@ pepe jam: " PepeJam "
 pepe laugh: " PepeLaugh "
 clueless: " Clueless "
 aware: " Aware "
+Binoculous | binoculars: " Binoculous "
+[wide] peepo happy: " widepeepoHappy "
+mod check: " ModCheck "
 
 scratcher: key(alt-backspace)
+
+skip: key("right:{10}")
+
+emote only: "/emoteonly"
+emote only off: "/emoteonlyoff"

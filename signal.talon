@@ -1,6 +1,7 @@
 os: mac
 and app.bundle: org.whispersystems.signal-desktop
 -
+tag(): user.scrolling
 
 message <number_small>:
     key(cmd-f)

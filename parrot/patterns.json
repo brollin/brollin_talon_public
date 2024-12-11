@@ -12,7 +12,7 @@
   "dental_click": {
     "sounds": ["dental_click"],
     "threshold": {
-      ">power": 3,
+      ">power": 30,
       ">probability": 0.99
     },
     "throttle": {

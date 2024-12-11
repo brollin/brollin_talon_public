@@ -21,18 +21,18 @@ ctx.lists["user.calculator_operation"] = {
     "divided by": "/",
     "choose": "choose",
 }
-ctx.lists["user.calculator_spire_operation"] = [
-    "weaken",
-    "vulnerable",
-    "weaken vulnerable",
-    "vulnerable weaken",
-]
+ctx.lists["user.calculator_spire_operation"] = {
+    "weaken": "weaken",
+    "vulnerable": "vulnerable",
+    "both": "weaken and vulnerable",
+    "super weaken": "super weaken",
+}
 
 spire_operation_factor = {
     "weaken": 0.75,
     "vulnerable": 1.5,
-    "weaken vulnerable": 9 / 8,
-    "vulnerable weaken": 9 / 8,
+    "weaken and vulnerable": 9 / 8,
+    "super weaken": 0.6,
 }
 
 previous_result = None

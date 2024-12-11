@@ -24,13 +24,14 @@ ctx.lists["user.conjurer_action"] = {
     "go to end": "goToEnd",
     "zoom in": "zoomIn",
     "zoom out": "zoomOut",
+    "experience copy": "copyExperience",
 }
 ctx.lists["user.conjurer_action_with_args"] = {
     "layer": "selectLayer",
     "go": "goToTime",
     "move": "moveBlockForwardRelative",
     "move back": "moveBlockBackwardRelative",
-    "move to": "moveBlockAbsolute",
+    "put": "moveBlockAbsolute",
     "extend": "extendBlockRelative",
     "shrink": "shrinkBlockRelative",
     "extend until": "extendBlockAbsolute",
