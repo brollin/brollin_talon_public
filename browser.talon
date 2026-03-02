@@ -13,3 +13,12 @@ bit warden:
 
 bit password:
     key(cmd-shift-9)
+
+address | address bar | go address | go url: browser.focus_address()
+address copy | url copy | copy address | copy url:
+    browser.focus_address()
+    sleep(50ms)
+    edit.copy()
+
+go forward: browser.go_forward()
+go backward: browser.go_back()

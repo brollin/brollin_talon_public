@@ -11,6 +11,13 @@ settings():
     user.cursorless_settings_directory = "talon_umbrella/cursorless-settings"
 
 (pad | padding): insert(" ")
+question [mark]: "?"
+pad stack: " :"
+pad dash: " -"
+leper: "("
+riper: ")"
+
+^drowse [<phrase>]$: user.sleep_talon()
 
 clippy: edit.paste()
 clipsy: edit.copy()
@@ -33,48 +40,44 @@ folk (gmail | mail):
     user.switcher_focus("firefox")
     key(cmd-1)
 
-folk text:
-    user.switcher_focus("firefox")
-    key(cmd-2)
+# folk text:
+#     user.switcher_focus("firefox")
+#     key(cmd-2)
 
 folk calendar:
     user.switcher_focus("firefox")
-    key(cmd-3)
+    key(cmd-2)
 
 folk slack:
     user.switcher_focus("firefox")
-    key(cmd-4)
+    key(cmd-3)
 
 folk discord:
     user.switcher_focus("firefox")
-    key(cmd-5)
+    key(cmd-4)
 
 folk zulip:
     user.switcher_focus("firefox")
-    key(cmd-6)
+    key(cmd-5)
 
-[folk] tracker:
-    user.switcher_focus("firefox")
-    key(cmd-7)
+# [folk] tracker:
+#     user.switcher_focus("firefox")
+#     key(cmd-7)
 
 folk main:
     user.switcher_focus("firefox")
-    key(cmd-8)
+    key(cmd-6)
 
 folk Spotify:
     user.switcher_focus("chrome")
     key(cmd-1)
 
-question [mark]: "?"
 
 secret fire: "se.cretfi.re"
 
-pad stack: " :"
-pad dash: " -"
-key(f5): user.toggle_talon()
-
 center: user.move_to_spot("center")
 
+key(f5): user.toggle_talon()
 computer sleep:
     user.move_to_spot("apple")
     sleep(0.1)
@@ -88,12 +91,10 @@ computer sleep:
     insert(".")
     insert(number_2)
 
-to do open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/todo.md")
-tracker open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/tracker.md")
-health open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/health.md")
-journal open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/journal.md")
-game open: user.open_file_in_vscode("/Users/ben.rollin/.talon/user/talon_umbrella/brollin_talon/game.md")
-spire open: user.open_file_in_vscode("/Users/ben.rollin/spire.md")
+to do open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/todo.md")
+health open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/health.md")
+journal open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/journal.md")
+game open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/Game\ Dev.md")
 
 Spotify hunt <user.text>:
     user.switcher_focus("chrome")

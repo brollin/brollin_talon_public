@@ -1,0 +1,25 @@
+TODO
+- look at last community commit. can i move lists out of community?
+- fix below stuff
+- fix UI overlay coloring
+- commit stuff to talon subrepos
+- "tab move right group" working in cursor
+
+
+
+
+
+
+sleep_mode.talon:
+mode: sleep
+-
+^(talon wake)+$: user.wake_talon()
+
+sleep_mode_dragon.talon
+
+^sleep all [<phrase>]$:
+    ...
+    user.engine_sleep()
+
+^talon sleep [<phrase>]$: user.sleep_talon()
+^drowse [<phrase>]$: user.sleep_talon()

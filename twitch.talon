@@ -41,7 +41,7 @@ pepe laugh: " PepeLaugh "
 clueless: " Clueless "
 aware: " Aware "
 Binoculous | binoculars: " Binoculous "
-[wide] peepo happy: " widepeepoHappy "
+[wide] peepo happy: " peepoHappy "
 mod check: " ModCheck "
 
 scratcher: key(alt-backspace)

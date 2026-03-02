@@ -88,3 +88,18 @@ imports fix:
 
 entry new:
     mimic("pre file this post section this slap slap hash hash pad date insert slap slap")
+
+git commit all [<user.text>]:
+    user.vscode("git.stageAll")
+    user.vscode("git.commitStaged")
+    sleep(100ms)
+    user.insert_formatted(text or "", "CAPITALIZE_FIRST_WORD")
+
+file new: user.vscode_and_wait("explorer.newFile")
+file create: user.vscode_and_wait("explorer.newFile")
+
+class name:
+    insert(" className=\"\" ")
+    key(left)
+    key(left)
+

@@ -91,7 +91,7 @@ services: dict[str, Service] = {
     "game": {
         "id": "game-wip",
         "domains": {
-            "prod": "http://localhost:3000",
+            "prod": "https://sneaky-goblins.vercel.app",
             "local": "http://localhost:3000",
         },
         "endpoints": [],
