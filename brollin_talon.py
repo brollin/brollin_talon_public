@@ -26,6 +26,7 @@ mode_color = {
 }
 
 
+# Disabled for now
 class BrollinOverlay:
     talon_awake = True
     screen = ui.screens()[0]
@@ -87,7 +88,8 @@ class BrollinOverlay:
         self.redraw()
 
 
-brollin_overlay = BrollinOverlay()
+# disable this overlay for now
+# brollin_overlay = BrollinOverlay()
 
 
 @mod.action_class
@@ -101,30 +103,20 @@ class BrollinActions:
         actions.app.tab_close()
         clip.set_text(command_id)
 
-    def show_talon_overlay(toggle: int):
-        """Show an overlay indicating whether talon is awake"""
-        brollin_overlay.set_awake(True if toggle == 1 else False)
+    # def show_talon_overlay(toggle: int):
+    #     """Show an overlay indicating whether talon is awake"""
+    #     brollin_overlay.set_awake(True if toggle == 1 else False)
+
+    # def set_talon_mode_color(mode: str):
+    #     """Set talon mode color"""
+    #     brollin_overlay.set_mode(mode)
 
     def toggle_talon():
         """Toggle talon on or off"""
         if not actions.speech.enabled():
-            actions.user.wake_talon()
+            actions.speech.enable()
         else:
-            actions.user.sleep_talon()
-
-    def sleep_talon():
-        """Turn talon off"""
-        actions.speech.disable()
-        brollin_overlay.set_awake(False)
-
-    def wake_talon():
-        """Turn talon on"""
-        actions.speech.enable()
-        brollin_overlay.set_awake(True)
-
-    def set_talon_mode_color(mode: str):
-        """Set talon mode color"""
-        brollin_overlay.set_mode(mode)
+            actions.speech.disable()
 
     def open_file_in_vscode(path: str):
         """Open a given file path with VSCode"""

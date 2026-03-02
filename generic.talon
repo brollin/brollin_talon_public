@@ -17,7 +17,7 @@ pad dash: " -"
 leper: "("
 riper: ")"
 
-^drowse [<phrase>]$: user.sleep_talon()
+^drowse [<phrase>]$: speech.disable()
 
 clippy: edit.paste()
 clipsy: edit.copy()

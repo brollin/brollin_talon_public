@@ -1,7 +1,7 @@
 from talon import Module, Context, ctrl, actions, noise, settings, app
 import time
 
-from ..brollin_talon import brollin_overlay
+# from ..brollin_talon import brollin_overlay
 
 mod = Module()
 mod.list("parrot_sound", desc="List of all parrot sounds")
@@ -110,7 +110,7 @@ class ParrotActions:
         text = "      ".join(
             ": ".join(key_value) for key_value in parrot.sound_to_action.items()
         )
-        brollin_overlay.set_overlay_text(text)
+        # brollin_overlay.set_overlay_text(text)
 
     def unassign_parrot_action(sound: str):
         """Unassign a parrot action"""
@@ -125,10 +125,10 @@ class ParrotActions:
         parrot.profile = profile
         parrot.sound_to_action = profiles[profile]
 
-        brollin_overlay.set_overlay_text(parrot.get_profile_overlay_text())
+        # brollin_overlay.set_overlay_text(parrot.get_profile_overlay_text())
 
     def parrot_special_action(action: str):
         """Do a special parrot action"""
         if action == "flip":
             parrot.scroll_direction *= -1
-            brollin_overlay.set_overlay_text(parrot.get_profile_overlay_text())
+            # brollin_overlay.set_overlay_text(parrot.get_profile_overlay_text())
