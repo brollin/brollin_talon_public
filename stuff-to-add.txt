@@ -1,3 +1,0 @@
-TODO
-- commit stuff to talon subrepos
-- "tab move right group" working in cursor

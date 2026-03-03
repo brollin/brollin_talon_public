@@ -1,5 +1,7 @@
 os: mac
 and app.bundle: com.microsoft.VSCode
+os: mac
+and app.bundle: com.todesktop.230313mzl4w4u92
 -
 commie: key(cmd-/)
 
