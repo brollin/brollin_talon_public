@@ -53,7 +53,7 @@ parrot = Parrot()
 
 
 def set_initial_parrot_profile():
-    actions.user.set_parrot_profile("gazer")
+    actions.user.set_parrot_profile("zoomer")
 
 
 app.register("ready", set_initial_parrot_profile)
