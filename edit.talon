@@ -4,7 +4,7 @@ step: edit.word_right()
 tug: edit.left()
 push: edit.right()
 north: edit.up()
-sout: edit.down()
+(south | sout): edit.down()
 
 
 # Delete
@@ -25,6 +25,8 @@ clear right: user.delete_right()
 
 <user.delete> word:
     edit.delete_word()
+
+
 
 scratcher:
     user.delete_word_left_n(1)

@@ -123,6 +123,28 @@ class BrollinActions:
         command = "open -a 'Visual Studio Code' " + path
         actions.user.system_command_nb(command)
 
+    def open_file_in_cursor(path: str):
+        """Open a given file path with Cursor"""
+        command = "open -a 'Cursor' " + path
+        actions.user.system_command_nb(command)
+
+    def open_file_in_obsidian(path: str):
+        """Open a given file path with Obsidian"""
+        command = "open -a 'Obsidian' " + path
+        actions.user.system_command_nb(command)
+
     def open_path_with_default_program(path: str):
         """Open path with default program"""
         actions.user.system_command_nb("open " + path)
+
+    def select_all_and_fix_grammar():
+        """Select all text and apply the model fix grammar prompt"""
+        # Keep in sync with talon-ai-tools/GPT/lists/staticPrompt.talon-list "fix grammar"
+        fix_grammar_prompt = (
+            "Fix any mistakes or irregularities in grammar, spelling, or formatting. "
+            "The text was created using voice dictation. Thus, there are likely to be "
+            "issues regarding homophones and other misrecognitions. Do not change the "
+            "tone. Do not change the original structure of the text."
+        )
+        actions.edit.select_all()
+        actions.user.gpt_apply_prompt(fix_grammar_prompt, "model", "", "", "")

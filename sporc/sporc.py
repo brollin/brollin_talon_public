@@ -112,6 +112,12 @@ class SporcController:
         command = "open -a 'Visual Studio Code' " + get_local_repo_path(service)
         actions.user.system_command_nb(command)
 
+    def open_cursor(self, service_spoken: str):
+        service = services[service_spoken]
+
+        command = "open -a 'Cursor' " + get_local_repo_path(service)
+        actions.user.system_command_nb(command)
+
     def open_repo_directory(self, service_spoken: str):
         service = services[service_spoken]
 
@@ -170,6 +176,10 @@ class SporcActions:
     def sporc_code(service_spoken: str):
         """Open the service repository in VS code"""
         sporc_controller.open_vscode(service_spoken)
+
+    def sporc_cursor(service_spoken: str):
+        """Open the service repository in Cursor"""
+        sporc_controller.open_cursor(service_spoken)
 
     def sporc_change_directory(service_spoken: str):
         """Open the service repository in terminal"""

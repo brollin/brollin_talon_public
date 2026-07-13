@@ -4,7 +4,7 @@ and app.bundle: com.redhookgames.Darkest
 
 # more info: https://talon.wiki/unofficial_talon_docs/#built-in-talon-settings
 settings():
-    user.mouse_wheel_down_amount = 60
+    user.mouse_wheel_down_amount = -60
     key_hold = 32
 
 # borrowed some of these from: https://github.com/ziemus/talon_voice_games/blob/master/Darkest%20Dungeon/darkest_dungeon.talon

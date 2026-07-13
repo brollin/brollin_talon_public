@@ -16,4 +16,5 @@ open {user.service} [service] local: user.sporc_open(service, "local")
 open {user.service} [service] git: user.sporc_open(service, "git")
 
 code {user.service} [service]: user.sporc_code(service)
+cursor {user.service} [service]: user.sporc_cursor(service)
 term change {user.service} [service]: user.sporc_change_directory(service)

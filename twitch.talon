@@ -44,8 +44,6 @@ Binoculous | binoculars: " Binoculous "
 [wide] peepo happy: " peepoHappy "
 mod check: " ModCheck "
 
-scratcher: key(alt-backspace)
-
 skip: key("right:{10}")
 
 emote only: "/emoteonly"

@@ -10,7 +10,10 @@ settings():
     user.screenshot_folder = "~/Desktop"
     user.cursorless_settings_directory = "talon_umbrella/cursorless-settings"
 
+<number_small>: "{number_small}"
+
 (pad | padding): insert(" ")
+pound: insert(" ")
 question [mark]: "?"
 pad stack: " :"
 pad dash: " -"
@@ -36,41 +39,30 @@ consol log:
 
 rectangle top right: key(ctrl-alt-i)
 
-folk (gmail | mail):
-    user.switcher_focus("firefox")
+# Use the command "running list" to see names of running apps
+(focus | folk) (gmail | mail):
+    user.switcher_focus("Firefox")
     key(cmd-1)
 
-# folk text:
-#     user.switcher_focus("firefox")
-#     key(cmd-2)
-
-folk calendar:
-    user.switcher_focus("firefox")
+(focus | folk) calendar:
+    user.switcher_focus("Firefox")
     key(cmd-2)
 
-folk slack:
-    user.switcher_focus("firefox")
-    key(cmd-3)
+(focus | folk) zulip:
+    user.switcher_focus("Zulip")
 
-folk discord:
-    user.switcher_focus("firefox")
-    key(cmd-4)
+(focus | folk) fox:
+    user.switcher_focus("Firefox")
 
-folk zulip:
-    user.switcher_focus("firefox")
-    key(cmd-5)
-
-# [folk] tracker:
-#     user.switcher_focus("firefox")
-#     key(cmd-7)
-
-folk main:
-    user.switcher_focus("firefox")
-    key(cmd-6)
-
-folk Spotify:
-    user.switcher_focus("chrome")
+(focus | folk) Spotify:
+    user.switcher_focus("Spotify")
     key(cmd-1)
+
+(focus | folk) to do:
+    user.open_file_in_obsidian("/Users/ben.rollin/BensObsidianVault/todo.md")
+
+(focus | folk) curse:
+    user.switcher_focus("Cursor")
 
 
 secret fire: "se.cretfi.re"
@@ -91,10 +83,10 @@ computer sleep:
     insert(".")
     insert(number_2)
 
-to do open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/todo.md")
-health open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/health.md")
-journal open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/journal.md")
-game open: user.open_file_in_vscode("/Users/ben.rollin/BensObsidianVault/Game\ Dev.md")
+to do open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/todo.md")
+health open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/health.md")
+journal open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/journal.md")
+game open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/Game\ Dev.md")
 
 Spotify hunt <user.text>:
     user.switcher_focus("chrome")

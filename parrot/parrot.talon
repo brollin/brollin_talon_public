@@ -3,8 +3,8 @@ not mode: sleep
 parrot(alveolar_click):
 	# app.notify("alveolar_click")
 	user.do_mapped_parrot_action("alveolar_click")
-parrot(dental_click):
-	app.notify("dental_click")
+# parrot(dental_click):
+	# app.notify("dental_click")
 	# user.do_mapped_parrot_action("dental_click")
 	# mimic("model fix grammar block this")
 	# tracking.control_zoom_toggle()

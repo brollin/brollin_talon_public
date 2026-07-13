@@ -26,6 +26,16 @@ services: dict[str, Service] = {
         },
         "endpoints": [],
     },
+    "payment": {
+        "id": "payment-portal",
+        "githubPath": "lichess-org/payment-portal",
+        "domains": {
+            "prod": "https://payments.lichess.org",
+            "dev": "https://payments.test.lichess.app",
+            "local": "http://127.0.0.1:3111",
+        },
+        "endpoints": [],
+    },
     "next": {
         "id": "nextjs",
         "domains": {
