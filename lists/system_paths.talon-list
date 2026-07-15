@@ -1,0 +1,14 @@
+list: user.system_paths
+hostname: Ben-Rollins-MacBook-Pro-M3P3HK42N7
+-
+user: /Users/ben.rollin
+profile: /Users/ben.rollin
+desktop: /Users/ben.rollin/Desktop
+desk: /Users/ben.rollin/Desktop
+downloads: /Users/ben.rollin/Downloads
+pictures: /Users/ben.rollin/Pictures
+projects: /Users/ben.rollin/projects
+talon home: /Users/ben.rollin/.talon
+talon user: /Users/ben.rollin/.talon/user
+talon umbrella: /Users/ben.rollin/.talon/user/talon_umbrella
+applications: /Applications

@@ -1,0 +1,104 @@
+list: user.website
+os: mac
+-
+Netflix: https://www.netflix.com/browse
+amazon: https://www.amazon.com/
+google: https://www.google.com/
+google maps: https://maps.google.com/
+google drive: https://drive.google.com/
+maps: https://maps.google.com/
+google keep: https://keep.google.com/u/3/#home
+gmail: https://mail.google.com/
+github: https://github.com/
+github repos: https://github.com/brollin?tab=repositories
+github profile: https://github.com/brollin
+wikipedia: https://en.wikipedia.org/
+youtube: https://www.youtube.com/
+twitch: https://www.twitch.tv/
+read it: https://old.reddit.com/
+hacker news: https://news.ycombinator.com/
+calendar: https://calendar.google.com/calendar/u/1/r
+letterbox: https://letterboxd.com/
+watch list: https://letterboxd.com/brollin/watchlist/
+ven moe: https://account.venmo.com/
+app folio: https://apg.appfolio.com/connect/online_work_orders
+door dash: https://www.doordash.com/home/
+instacart: https://www.instacart.com/store/
+audible: https://www.audible.com/
+you block origin: moz-extension://d83c0e73-8f5e-457b-9ac4-5a089f21ef55/dashboard.html#3p-filters.html
+you block: moz-extension://d83c0e73-8f5e-457b-9ac4-5a089f21ef55/dashboard.html#3p-filters.html
+rango extension: moz-extension://4913c2e5-6244-49c8-8cca-5a4c2731ea10/settings.a7dc59d7.html
+onboarding: https://github.com/lichess-org/lila/wiki/Lichess-Development-Onboarding
+render: https://dashboard.render.com/project/prj-csi4hbogph6c7386u73g
+talon: https://talonvoice.com/
+talon slack: https://app.slack.com/client/T7FPSMV8F/C026KPTJE6T
+talon wiki: https://talon.wiki/
+journey: https://threejs-journey.com/lessons
+rango: https://github.com/david-tejada/rango
+rubular: https://rubular.com/
+cosmere: http://localhost:3000/cosmere
+mermaid: https://mermaid.js.org/syntax/xyChart.html
+react icons: https://react-icons.github.io/react-icons/
+chakra: https://v2.chakra-ui.com/
+vercel: https://vercel.com/brollin
+playground: http://localhost:3000/playground
+controller: http://localhost:3000/controller
+viewer: http://localhost:3000/viewer
+beatMapper: http://localhost:3000/beatMapper
+portal: http://localhost:3000/portal
+pipes: http://localhost:3000/pipes
+pipes prod: https://canopyconjurer.vercel.app/pipes
+burning man: https://docs.google.com/spreadsheets/d/13gYTFAcL3aL-GBzoGoj51DnZPOzABsIBlUgubPhtoxk/edit#gid=1376621213
+secret fire: https://docs.google.com/spreadsheets/d/13gYTFAcL3aL-GBzoGoj51DnZPOzABsIBlUgubPhtoxk/edit#gid=1376621213
+burning ben: https://docs.google.com/spreadsheets/d/1M0wrmkTPPjsLrRFjlV2qV0jqJsRnTHK1_e5IUyQJ05c/edit#gid=1612304841
+west wing: https://www.amazon.com/gp/video/detail/B001JC24KW/ref=atv_dp_season_select_s7
+stream manager: https://dashboard.twitch.tv/u/brollin_/stream-manager
+stream elements: https://streamelements.com/dashboard
+stream: https://www.twitch.tv/brollin_
+twitch stream: https://www.twitch.tv/brollin_
+good reads: https://www.goodreads.com/
+spire reference: https://docs.google.com/spreadsheets/d/1ZsxNXebbELpcCi8N7FVOTNGdX_K9-BRC_LMgx4TORo4/edit#gid=1047380459
+steam workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3266253644
+photos: https://photos.google.com/u/3/
+sutter health: https://myhealthonline.sutterhealth.org/
+sutter: https://myhealthonline.sutterhealth.org/
+my health online: https://myhealthonline.sutterhealth.org/
+sputnik: https://www.sputnikmusic.com/
+first law map: https://i.redd.it/fhkm2xuthjm71.png
+doc new: https://doc.new
+schwab: https://client.schwab.com/clientapps/accounts/summary/
+notifications: https://github.com/notifications
+issues: https://github.com/lichess-org/lila/issues
+tailwind: https://nerdcave.com/tailwind-cheat-sheet
+mobx: https://mobx.js.org/react-integration.html
+paramount: https://www.paramountplus.com/home/
+cobra: https://cobrapoint.benaissance.com/Member
+local study: http://localhost:9663/study/2JKoT2VE/EiFRdfSB
+lichess: https://lichess.org
+feedback: https://lichess.org/forum/lichess-feedback
+forum: https://lichess.org/forum/lichess-feedback
+grubby: https://www.twitch.tv/grubby
+movies: https://fmoviesz.to/home
+chart js: https://www.chartjs.org/docs/latest/axes/cartesian/linear.html
+colors: https://tailwindcss.com/docs/customizing-colors
+easings: https://easings.net/
+answers: https://github.com/munificent/craftinginterpreters/tree/master/note/answers
+rust: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
+medicare: https://www.medicare.gov/account/login
+prodigy: https://www.netflix.com/browse?jbv=81725736
+jay and el: https://jessieetlaurent.com/menu/
+rara land: https://liquipedia.net/warcraft/Being_Esports_World_Series/2024
+star trek TV: https://pluto.tv/us/live-tv/5efbd39f8c4ce900075d7698
+warcraft: https://www.twitch.tv/back2warcraft
+news one: https://www.memeorandum.com/
+news two: https://www.newsminimalist.com/
+canopy: https://se.cretfi.re/canopy/
+test: http://localhost:3000/test
+proton: https://mail.proton.me/u/0/inbox
+proton mail: https://mail.proton.me/u/0/inbox
+drizzle local: https://local.drizzle.studio
+shad see en: https://ui.shadcn.com/docs/installation/next
+deck tester: https://sneaky-goblins.vercel.app/decktester
+lucide: https://lucide.dev/icons/
+clerk: https://dashboard.clerk.com/apps/app_2tklX0Yi0NG4vzLNPCKu7efM36Y/instances/ins_2tklX1v0PdHuZdiH1hUATGN4Ga4
+portainer: https://manage.lichess.app/

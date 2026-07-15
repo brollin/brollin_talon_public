@@ -12,8 +12,9 @@ settings():
 
 <number_small>: "{number_small}"
 
-(pad | padding): insert(" ")
-pound: insert(" ")
+(pad | padding): " "
+pound: " "
+score: "_"
 question [mark]: "?"
 pad stack: " :"
 pad dash: " -"

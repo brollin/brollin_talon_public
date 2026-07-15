@@ -36,6 +36,14 @@ services: dict[str, Service] = {
         },
         "endpoints": [],
     },
+    "hermes": {
+        "id": "hermes",
+        "githubPath": "lichess-org/hermes",
+        "domains": {
+            "prod": "https://hermes.lichess.app/admin",
+        },
+        "endpoints": [],
+    },
     "next": {
         "id": "nextjs",
         "domains": {

@@ -1,0 +1,19 @@
+list: user.search_engine
+os: mac
+-
+amazon: https://www.amazon.com/s/?field-keywords=%s
+google: https://www.google.com/search?q=%s
+image: https://www.google.com/search?q=%s&source=lnms&tbm=isch
+lucky: https://duckduckgo.com/?q=%5C%s
+scholar: https://scholar.google.com/scholar?q=%s
+wiki: https://en.wikipedia.org/w/index.php?search=%s
+YouTube: https://www.youtube.com/results?search_query=%s
+mozilla: https://www.google.com/search?q=%s+site%3Ahttps%3A%2F%2Fdeveloper.mozilla.org&ei=Qk4mY426D8PI0PEPrbGG6AI
+reddit: https://www.google.com/search?q=site%3Areddit.com+%s
+spire: https://www.google.com/search?q=slay+the+spire+%s
+GitHub: https://github.com/brollin?tab=repositories&q=%s&type=&language=&sort=
+letterbox: https://letterboxd.com/search/%s/?adult
+rotten: https://www.rottentomatoes.com/search?search=%s
+imdb: https://www.imdb.com/find/?q=%s&ref_=nv_sr_sm
+movies: https://fmoviesz.to/filter?keyword=%s
+sub reddit: https://old.reddit.com/r/%s
