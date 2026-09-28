@@ -1,6 +1,6 @@
 from typing import Dict
 from talon import Module, Context, ui, ctrl, canvas, screen, actions, clip, noise
-from talon.skia import Paint, Image
+from skia import Paint
 import json
 
 mod = Module()

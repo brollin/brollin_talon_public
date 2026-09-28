@@ -1,6 +1,6 @@
 from talon import Module, Context, ui, ctrl, canvas, screen, actions
 from dataclasses import dataclass
-from talon.skia import Paint, Image
+from skia import Paint
 from talon.types import point
 
 mod = Module()

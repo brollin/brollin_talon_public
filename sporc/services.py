@@ -12,7 +12,8 @@ services: dict[str, Service] = {
         "id": "lila",
         "githubPath": "lichess-org/lila",
         "domains": {
-            "prod": "https://github.com/lichess-org/lila",
+            "prod": "https://lichess.org",
+            "dev": "https://preview.test.lichess.app/",
             "local": "http://localhost:9663",
         },
         "endpoints": [],

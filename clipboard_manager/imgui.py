@@ -1,6 +1,6 @@
-from talon import Module, skia, ui, settings
-from talon.skia.image import Image as SkiaImage
-from talon.skia.imagefilter import ImageFilter as ImageFilter
+import skia
+from talon import Module, ui, settings
+from skia import Image as SkiaImage
 from talon.canvas import Canvas, MouseEvent
 from talon.screen import Screen
 from talon.types import Rect
@@ -33,8 +33,8 @@ setting_max_col = mod.setting(
 
 class State:
     def __init__(self, canvas: skia.Canvas, font_size: float, numbered: bool):
-        self.max_rows = setting_max_rows.get()
-        self.max_cols = setting_max_col.get()
+        self.max_rows = settings.get("user.gui_max_rows")
+        self.max_cols = settings.get("user.gui_max_cols")
         self.canvas = canvas
         self.font_size = font_size
         self.padding = self.rem(0.5)

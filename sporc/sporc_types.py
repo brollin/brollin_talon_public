@@ -1,5 +1,4 @@
-from typing import Union
-from typing_extensions import TypedDict, NotRequired, Literal
+from typing import Literal, NotRequired, TypedDict, Union
 
 Method = Union[
     Literal["GET"], Literal["PATCH"], Literal["PUT"], Literal["POST"], Literal["DELETE"]

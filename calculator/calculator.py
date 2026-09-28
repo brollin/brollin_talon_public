@@ -1,6 +1,6 @@
 from math import comb
 from talon import Module, Context, ui, ctrl, cron, canvas, screen, actions
-from talon.skia import Paint, Image
+from skia import Paint
 from talon.types import point
 
 mod = Module()

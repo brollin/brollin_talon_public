@@ -88,7 +88,7 @@ computer sleep:
 to do open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/todo.md")
 health open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/health.md")
 journal open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/journal.md")
-game open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/Game\ Dev.md")
+game open: user.open_file_in_cursor("/Users/ben.rollin/BensObsidianVault/Game\ Dev/Game\ Dev.md")
 
 Spotify hunt <user.text>:
     user.switcher_focus("chrome")
