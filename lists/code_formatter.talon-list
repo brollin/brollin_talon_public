@@ -2,6 +2,7 @@ list: user.code_formatter
 os: mac
 -
 all cap: ALL_CAPS
+shout: ALL_CAPS
 all down: ALL_LOWERCASE
 camel: PRIVATE_CAMEL_CASE
 dotted: DOT_SEPARATED

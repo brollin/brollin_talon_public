@@ -10,7 +10,7 @@ settings():
     user.screenshot_folder = "~/Desktop"
     user.cursorless_settings_directory = "talon_umbrella/cursorless-settings"
 
-<number_small>: "{number_small}"
+<user.number_string>: "{number_string}"
 
 (pad | padding): " "
 pound: " "
@@ -20,6 +20,7 @@ pad stack: " :"
 pad dash: " -"
 leper: "("
 riper: ")"
+quad: "\""
 
 ^drowse [<phrase>]$: speech.disable()
 

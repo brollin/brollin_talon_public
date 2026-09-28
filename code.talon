@@ -39,10 +39,6 @@ file keep: user.vscode("workbench.action.keepEditor")
 
 please rewrap: key("alt-q")
 
-# for selecting a quick pick item
-choose <number_small>: key("down:{number_small-1} enter")
-choose up <number_small>: key("up:{number_small} enter")
-
 copy command: user.copy_command_id()
 copy command <number_small>:
     key("down:{number_small-1}")

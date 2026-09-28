@@ -6,6 +6,7 @@ node pack install save: insert("npm install --save ")
 node pack install save dev: insert("npm install --save-dev ")
 node pack start: insert("npm start ")
 node pack run dev: insert("npm run dev ")
+node pack dev: insert("npm dev ")
 node pack help: insert("npm help ")
 node pack init: insert("npm init ")
 node pack test: insert("npm test ")
@@ -62,4 +63,12 @@ brew link force go: insert("brew link --force go@1.1")
 brew unlink: insert("brew unlink ")
 
 # lichess
-ui build: insert("ui/build -cdr")
+ui build: insert("ui/build -w")
+
+nix: "nix "
+dev envy: "devenv "
+dev envy up: "devenv up"
+dev envy down: "devenv down"
+dev envy shell: "devenv shell"
+dev envy edit: "devenv edit"
+

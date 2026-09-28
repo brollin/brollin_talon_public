@@ -22,3 +22,14 @@ address copy | url copy | copy address | copy url:
 
 go forward: browser.go_forward()
 go backward: browser.go_back()
+
+# lichess stuff
+
+^hello$: "Hello,\n\n"
+^regards$: key(ctrl-shift-e)
+^sign off$:
+    key(enter)
+    key(enter)
+    key(ctrl-shift-e)
+    key(cmd-enter)
+hermes: key(ctrl-shift-g)

@@ -1,6 +1,7 @@
 list: user.vocabulary
 os: mac
 -
+and
 admin
 Cisco
 VPN
@@ -17,6 +18,7 @@ frontend
 backend
 yaml
 PR
+PRs
 url
 zulip
 enum
@@ -30,10 +32,8 @@ tokenize
 tokenizing
 pad
 faramir
-Leci
 talon
 deprioritize
-vamsi
 vamsis
 lol
 restream
@@ -58,12 +58,12 @@ api
 chat
 Steph
 Schwab
-arsalan
+Arsalan
 knock
 gpu
 dune
 vite
-somya
+Somya
 mobx
 Asanka
 snabbdom
@@ -87,3 +87,26 @@ memo
 Balatro
 css
 portainer
+Glicko
+trevlar
+benjector
+LFO
+sum: some
+you hall: uhaul
+Lichess
+Le chest: Lichess
+ley chess: Lichess
+BART
+Steff: Steph
+purr: per
+pur: per
+Jowain
+tee mux: tmux
+meshtastic
+unmark
+hard coated: hardcoded
+whorl: whirl
+sysadmin
+would
+pseudo: sudo
+hostile: hostel

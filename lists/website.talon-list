@@ -17,7 +17,7 @@ youtube: https://www.youtube.com/
 twitch: https://www.twitch.tv/
 read it: https://old.reddit.com/
 hacker news: https://news.ycombinator.com/
-calendar: https://calendar.google.com/calendar/u/1/r
+calendar: https://calendar.google.com/calendar/u/0/r
 letterbox: https://letterboxd.com/
 watch list: https://letterboxd.com/brollin/watchlist/
 ven moe: https://account.venmo.com/
@@ -42,17 +42,11 @@ react icons: https://react-icons.github.io/react-icons/
 chakra: https://v2.chakra-ui.com/
 vercel: https://vercel.com/brollin
 playground: http://localhost:3000/playground
-controller: http://localhost:3000/controller
-viewer: http://localhost:3000/viewer
-beatMapper: http://localhost:3000/beatMapper
-portal: http://localhost:3000/portal
 pipes: http://localhost:3000/pipes
 pipes prod: https://canopyconjurer.vercel.app/pipes
-burning man: https://docs.google.com/spreadsheets/d/13gYTFAcL3aL-GBzoGoj51DnZPOzABsIBlUgubPhtoxk/edit#gid=1376621213
+burning man: https://docs.google.com/spreadsheets/d/1N2GWeMjizAJTqxJtzkHlrGooR6LcS4BMxJE5w37JjRA/edit?gid=0#gid=0
 secret fire: https://docs.google.com/spreadsheets/d/13gYTFAcL3aL-GBzoGoj51DnZPOzABsIBlUgubPhtoxk/edit#gid=1376621213
-burning ben: https://docs.google.com/spreadsheets/d/1M0wrmkTPPjsLrRFjlV2qV0jqJsRnTHK1_e5IUyQJ05c/edit#gid=1612304841
-west wing: https://www.amazon.com/gp/video/detail/B001JC24KW/ref=atv_dp_season_select_s7
-stream manager: https://dashboard.twitch.tv/u/brollin_/stream-manager
+burning ben: https://docs.google.com/spreadsheets/d/1mYrds-NHMO2awQzJFrYR29eeOEpRPWNohK5S5cHJySg/edit?gid=1429979035#gid=1429979035
 stream elements: https://streamelements.com/dashboard
 stream: https://www.twitch.tv/brollin_
 twitch stream: https://www.twitch.tv/brollin_
@@ -83,13 +77,7 @@ chart js: https://www.chartjs.org/docs/latest/axes/cartesian/linear.html
 colors: https://tailwindcss.com/docs/customizing-colors
 easings: https://easings.net/
 answers: https://github.com/munificent/craftinginterpreters/tree/master/note/answers
-rust: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
 medicare: https://www.medicare.gov/account/login
-prodigy: https://www.netflix.com/browse?jbv=81725736
-jay and el: https://jessieetlaurent.com/menu/
-rara land: https://liquipedia.net/warcraft/Being_Esports_World_Series/2024
-star trek TV: https://pluto.tv/us/live-tv/5efbd39f8c4ce900075d7698
-warcraft: https://www.twitch.tv/back2warcraft
 news one: https://www.memeorandum.com/
 news two: https://www.newsminimalist.com/
 canopy: https://se.cretfi.re/canopy/
@@ -102,3 +90,13 @@ deck tester: https://sneaky-goblins.vercel.app/decktester
 lucide: https://lucide.dev/icons/
 clerk: https://dashboard.clerk.com/apps/app_2tklX0Yi0NG4vzLNPCKu7efM36Y/instances/ins_2tklX1v0PdHuZdiH1hUATGN4Ga4
 portainer: https://manage.lichess.app/
+cursor spending: https://cursor.com/dashboard/spending
+email guide: https://wiki.lichess.ovh/en/stipend/admin/email-guide
+authentic: https://auth.lichess.app/if/user/
+about debugging: about:debugging
+turso: https://app.turso.tech/secretfire/databases/conjurer-db
+pull requests: https://github.com/pulls/inbox
+password reset: https://lichess.org/password/reset
+appeal: https://lichess.org/password/appeal
+discord: https://discord.com/channels/557381833843671043/557381833843671049
+poste: https://poste.lichess.app/admin/email-events

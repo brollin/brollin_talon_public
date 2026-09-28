@@ -17,3 +17,7 @@ rotten: https://www.rottentomatoes.com/search?search=%s
 imdb: https://www.imdb.com/find/?q=%s&ref_=nv_sr_sm
 movies: https://fmoviesz.to/filter?keyword=%s
 sub reddit: https://old.reddit.com/r/%s
+maps: https://www.google.com/maps/search/%s
+mod IP: https://lichess.org/mod/ip/%s
+lichess: https://lichess.org/mod/search?q=%s
+lick: https://lichess.org/mod/search?q=%s
